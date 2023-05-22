@@ -46,20 +46,20 @@ const ProductCard = ({ data, isEvent }) => {
     dispatch(addToWishlist(data));
   };
 
-  // const addToCartHandler = (id) => {
-  //   const isItemExists = cart && cart.find((i) => i._id === id);
-  //   if (isItemExists) {
-  //     toast.error("Item already in cart!");
-  //   } else {
-  //     if (data.stock < 1) {
-  //       toast.error("Product stock limited!");
-  //     } else {
-  //       const cartData = { ...data, qty: 1 };
-  //       dispatch(addTocart(cartData));
-  //       toast.success("Item added to cart successfully!");
-  //     }
-  //   }
-  // };
+  const addToCartHandler = (id) => {
+    const isItemExists = cart && cart.find((i) => i._id === id);
+    if (isItemExists) {
+      toast.error("Item already in cart!");
+    } else {
+      if (data.stock < 1) {
+        toast.error("Product stock limited!");
+      } else {
+        const cartData = { ...data, qty: 1 };
+        dispatch(addTocart(cartData));
+        toast.success("Item added to cart successfully!");
+      }
+    }
+  };
 
   return (
     <>
@@ -73,7 +73,7 @@ const ProductCard = ({ data, isEvent }) => {
           }`}
         >
           <img
-            src={`${backend_url}/${data.images && data.images[0]}`}
+            src={`${data.images && data.images[0]}`}
             alt=""
             className="w-full h-[170px] object-contain"
           />
@@ -102,10 +102,10 @@ const ProductCard = ({ data, isEvent }) => {
                 {data.originalPrice === 0
                   ? data.originalPrice
                   : data.discountPrice}
-                Rs.
+                $
               </h5>
               <h4 className={`${styles.price}`}>
-                {data.originalPrice ? data.originalPrice + "  Rs." : null}
+                {data.originalPrice ? data.originalPrice + " $" : null}
               </h4>
             </div>
             <span className="font-[400] text-[17px] text-[#68d284]">
@@ -140,13 +140,13 @@ const ProductCard = ({ data, isEvent }) => {
             color="#333"
             title="Quick view"
           />
-          {/* <AiOutlineShoppingCart
+          <AiOutlineShoppingCart
             size={25}
             className="cursor-pointer absolute right-2 top-24"
             onClick={() => addToCartHandler(data._id)}
             color="#444"
             title="Add to cart"
-          /> */}
+          />
           {open ? <ProductDetailsCard setOpen={setOpen} data={data} /> : null}
         </div>
       </div>

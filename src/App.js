@@ -10,8 +10,8 @@ import {
   BestSellingPage,
   EventsPage,
   FAQPage,
-  // CheckoutPage,
-  // PaymentPage,
+  CheckoutPage,
+  PaymentPage,
   OrderSuccessPage,
   ProductDetailsPage,
   ProfilePage,
@@ -32,16 +32,26 @@ import {
   ShopPreviewPage,
   ShopAllOrders,
   ShopOrderDetails,
-  // ShopAllRefunds,
+  ShopAllRefunds,
   ShopSettingsPage,
-  // ShopWithDrawMoneyPage,
+  ShopWithDrawMoneyPage,
   ShopInboxPage,
 } from "./routes/ShopRoutes";
+import {
+  AdminDashboardPage,
+  AdminDashboardUsers,
+  AdminDashboardSellers,
+  AdminDashboardOrders,
+  AdminDashboardProducts,
+  AdminDashboardEvents,
+  AdminDashboardWithdraw,
+} from "./routes/AdminRoutes";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Store from "./redux/store";
 import { loadSeller, loadUser } from "./redux/actions/user";
 import ProtectedRoute from "./routes/ProtectedRoute";
+import ProtectedAdminRoute from "./routes/ProtectedAdminRoute";
 import { ShopHomePage } from "./ShopRoutes.js";
 import SellerProtectedRoute from "./routes/SellerProtectedRoute";
 import { getAllProducts } from "./redux/actions/product";
@@ -99,14 +109,14 @@ const App = () => {
         <Route path="/best-selling" element={<BestSellingPage />} />
         <Route path="/events" element={<EventsPage />} />
         <Route path="/faq" element={<FAQPage />} />
-        {/* <Route
+        <Route
           path="/checkout"
           element={
             <ProtectedRoute>
               <CheckoutPage />
             </ProtectedRoute>
           }
-        /> */}
+        />
         <Route path="/order/success" element={<OrderSuccessPage />} />
         <Route
           path="/profile"
@@ -184,14 +194,14 @@ const App = () => {
             </SellerProtectedRoute>
           }
         />
-        {/* <Route
+        <Route
           path="/dashboard-refunds"
           element={
             <SellerProtectedRoute>
               <ShopAllRefunds />
             </SellerProtectedRoute>
           }
-        /> */}
+        />
 
         <Route
           path="/order/:id"
@@ -233,20 +243,77 @@ const App = () => {
             </SellerProtectedRoute>
           }
         />
-        {/* <Route
+        <Route
           path="/dashboard-withdraw-money"
           element={
             <SellerProtectedRoute>
               <ShopWithDrawMoneyPage />
             </SellerProtectedRoute>
           }
-        /> */}
+        />
         <Route
           path="/dashboard-messages"
           element={
             <SellerProtectedRoute>
               <ShopInboxPage />
             </SellerProtectedRoute>
+          }
+        />
+        {/* Admin Routes */}
+        <Route
+          path="/admin/dashboard"
+          element={
+            <ProtectedAdminRoute>
+              <AdminDashboardPage />
+            </ProtectedAdminRoute>
+          }
+        />
+        <Route
+          path="/admin-users"
+          element={
+            <ProtectedAdminRoute>
+              <AdminDashboardUsers />
+            </ProtectedAdminRoute>
+          }
+        />
+        <Route
+          path="/admin-sellers"
+          element={
+            <ProtectedAdminRoute>
+              <AdminDashboardSellers />
+            </ProtectedAdminRoute>
+          }
+        />
+        <Route
+          path="/admin-orders"
+          element={
+            <ProtectedAdminRoute>
+              <AdminDashboardOrders />
+            </ProtectedAdminRoute>
+          }
+        />
+        <Route
+          path="/admin-products"
+          element={
+            <ProtectedAdminRoute>
+              <AdminDashboardProducts />
+            </ProtectedAdminRoute>
+          }
+        />
+        <Route
+          path="/admin-events"
+          element={
+            <ProtectedAdminRoute>
+              <AdminDashboardEvents />
+            </ProtectedAdminRoute>
+          }
+        />
+        <Route
+          path="/admin-withdraw-request"
+          element={
+            <ProtectedAdminRoute>
+              <AdminDashboardWithdraw />
+            </ProtectedAdminRoute>
           }
         />
       </Routes>

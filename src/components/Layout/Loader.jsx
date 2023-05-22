@@ -1,6 +1,6 @@
 import React from "react";
 import Lottie from "react-lottie";
-import animationData from "../../Assests/animations/24151-ecommerce-animation.json";
+import animationData from "../../Assests/animations/share-everythin-moneybooks.json";
 
 const Loader = () => {
   const defaultOptions = {

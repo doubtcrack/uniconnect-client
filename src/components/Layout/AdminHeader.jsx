@@ -1,19 +1,20 @@
 import React from "react";
 import { AiOutlineGift } from "react-icons/ai";
-import { MdOutlineLocalOffer } from "react-icons/md";
+import { BiMessageSquareDetail } from "react-icons/bi";
 import { FiPackage, FiShoppingBag } from "react-icons/fi";
+import { MdOutlineLocalOffer } from "react-icons/md";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { BiMessageSquareDetail } from "react-icons/bi";
-import { backend_url } from "../../../server";
+import { backend_url } from "../../server";
 
-const DashboardHeader = () => {
-  const { seller } = useSelector((state) => state.seller);
+const AdminHeader = () => {
+  const { user } = useSelector((state) => state.user);
+
   return (
     <div className="w-full h-[80px] bg-white shadow sticky top-0 left-0 z-30 flex items-center justify-between px-4">
       <div>
         <Link
-          to="/dashboard"
+          to="/"
           className="flex items-center justify-center w-full flex-grow md:flex-grow-0"
         >
           <img
@@ -58,17 +59,15 @@ const DashboardHeader = () => {
               className="mx-5 cursor-pointer"
             />
           </Link>
-          <Link to={`/shop/${seller._id}`}>
-            <img
-              src={`${seller.avatar}`}
-              alt=""
-              className="w-[50px] h-[50px] rounded-full object-cover"
-            />
-          </Link>
+          <img
+            src={`${user?.avatar}`}
+            alt=""
+            className="w-[50px] h-[50px] rounded-full object-cover"
+          />
         </div>
       </div>
     </div>
   );
 };
 
-export default DashboardHeader;
+export default AdminHeader;

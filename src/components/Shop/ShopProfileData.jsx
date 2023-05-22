@@ -11,13 +11,12 @@ import { getAllEventsShop } from "../../redux/actions/event";
 const ShopProfileData = ({ isOwner }) => {
   const { products } = useSelector((state) => state.products);
   const { events } = useSelector((state) => state.events);
-  const { seller } = useSelector((state) => state.seller);
   const { id } = useParams();
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAllProductsShop(id));
-    dispatch(getAllEventsShop(seller._id));
+    dispatch(getAllEventsShop(id));
   }, [dispatch]);
 
   const [active, setActive] = useState(1);
@@ -108,7 +107,7 @@ const ShopProfileData = ({ isOwner }) => {
             allReviews.map((item, index) => (
               <div className="w-full flex my-4">
                 <img
-                  src={`${backend_url}/${item.user.avatar}`}
+                  src={`/${item.user.avatar}`}
                   className="w-[50px] h-[50px] rounded-full"
                   alt=""
                 />

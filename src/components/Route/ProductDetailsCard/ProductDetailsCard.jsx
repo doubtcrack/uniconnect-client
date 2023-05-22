@@ -18,8 +18,6 @@ import {
 } from "../../../redux/actions/wishlist";
 
 const ProductDetailsCard = ({ setOpen, data }) => {
-  const { products } = useSelector((state) => state.products);
-
   const { cart } = useSelector((state) => state.cart);
   const { wishlist } = useSelector((state) => state.wishlist);
   const dispatch = useDispatch();
@@ -29,30 +27,30 @@ const ProductDetailsCard = ({ setOpen, data }) => {
 
   const handleMessageSubmit = () => {};
 
-  // const decrementCount = () => {
-  //   if (count > 1) {
-  //     setCount(count - 1);
-  //   }
-  // };
+  const decrementCount = () => {
+    if (count > 1) {
+      setCount(count - 1);
+    }
+  };
 
-  // const incrementCount = () => {
-  //   setCount(count + 1);
-  // };
+  const incrementCount = () => {
+    setCount(count + 1);
+  };
 
-  // const addToCartHandler = (id) => {
-  //   const isItemExists = cart && cart.find((i) => i._id === id);
-  //   if (isItemExists) {
-  //     toast.error("Item already in cart!");
-  //   } else {
-  //     if (data.stock < count) {
-  //       toast.error("Product stock limited!");
-  //     } else {
-  //       const cartData = { ...data, qty: count };
-  //       dispatch(addTocart(cartData));
-  //       toast.success("Item added to cart successfully!");
-  //     }
-  //   }
-  // };
+  const addToCartHandler = (id) => {
+    const isItemExists = cart && cart.find((i) => i._id === id);
+    if (isItemExists) {
+      toast.error("Item already in cart!");
+    } else {
+      if (data.stock < count) {
+        toast.error("Product stock limited!");
+      } else {
+        const cartData = { ...data, qty: count };
+        dispatch(addTocart(cartData));
+        toast.success("Item added to cart successfully!");
+      }
+    }
+  };
 
   useEffect(() => {
     if (wishlist && wishlist.find((i) => i._id === data._id)) {
@@ -72,20 +70,6 @@ const ProductDetailsCard = ({ setOpen, data }) => {
     dispatch(addToWishlist(data));
   };
 
-  const totalReviewsLength =
-    products &&
-    products.reduce((acc, product) => acc + product.reviews.length, 0);
-
-  const totalRatings =
-    products &&
-    products.reduce(
-      (acc, product) =>
-        acc + product.reviews.reduce((sum, review) => sum + review.rating, 0),
-      0
-    );
-
-  const averageRating = totalRatings / totalReviewsLength || 0;
-
   return (
     <div className="bg-[#fff]">
       {data ? (
@@ -99,14 +83,11 @@ const ProductDetailsCard = ({ setOpen, data }) => {
 
             <div className="block w-full 800px:flex">
               <div className="w-full 800px:w-[50%]">
-                <img
-                  src={`${backend_url}/${data.images && data.images[0]}`}
-                  alt=""
-                />
+                <img src={`${data.images && data.images[0]}`} alt="" />
                 <div className="flex">
                   <Link to={`/shop/preview/${data.shop._id}`} className="flex">
                     <img
-                      src={`${backend_url}/${data?.shop?.avatar}`}
+                      src={`${data?.shop?.avatar}`}
                       alt=""
                       className="w-[50px] h-[50px] rounded-full mr-2"
                     />
@@ -114,9 +95,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                       <h3 className={`${styles.shop_name}`}>
                         {data.shop.name}
                       </h3>
-                      <h5 className="pb-3 text-[15px]">
-                        {averageRating} Ratings
-                      </h5>
+                      <h5 className="pb-3 text-[15px]">(4.5) Ratings</h5>
                     </div>
                   </Link>
                 </div>
@@ -128,9 +107,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                     Send Message <AiOutlineMessage className="ml-1" />
                   </span>
                 </div>
-                <h5 className="text-[16px] text-[red] mt-5">
-                  {data?.sold_out} Sold out
-                </h5>
+                <h5 className="text-[16px] text-[red] mt-5">(50) Sold out</h5>
               </div>
 
               <div className="w-full 800px:w-[50%] pt-5 pl-[5px] pr-[5px]">
@@ -141,13 +118,13 @@ const ProductDetailsCard = ({ setOpen, data }) => {
 
                 <div className="flex pt-3">
                   <h4 className={`${styles.productDiscountPrice}`}>
-                    {data.discountPrice} Rs.
+                    {data.discountPrice}$
                   </h4>
                   <h3 className={`${styles.price}`}>
-                    {data.originalPrice ? data.originalPrice + " Rs." : null}
+                    {data.originalPrice ? data.originalPrice + "$" : null}
                   </h3>
                 </div>
-                {/* <div className="flex items-center mt-12 justify-between pr-3">
+                <div className="flex items-center mt-12 justify-between pr-3">
                   <div>
                     <button
                       className="bg-gradient-to-r from-teal-400 to-teal-500 text-white font-bold rounded-l px-4 py-2 shadow-lg hover:opacity-75 transition duration-300 ease-in-out"
@@ -191,7 +168,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                   <span className="text-[#fff] flex items-center">
                     Add to cart <AiOutlineShoppingCart className="ml-1" />
                   </span>
-                </div> */}
+                </div>
               </div>
             </div>
           </div>

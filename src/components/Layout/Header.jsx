@@ -77,21 +77,21 @@ const Header = ({ activeHeading }) => {
               placeholder="Search Product..."
               value={searchTerm}
               onChange={handleSearchChange}
-              className="h-[40px] w-full px-2 border-[#ee561a] border-[2px] rounded-md"
+              className="h-[40px] w-full px-2 border-[#3957db] border-[2px] rounded-md"
             />
             <AiOutlineSearch
               size={30}
               className="absolute right-2 top-1.5 cursor-pointer"
             />
             {searchData && searchData.length !== 0 ? (
-              <div className="absolute min-h-[20vh] bg-slate-50 shadow-sm-2 z-[9] p-4">
+              <div className="absolute min-h-[30vh] bg-slate-50 shadow-sm-2 z-[9] p-4">
                 {searchData &&
                   searchData.map((i, index) => {
                     return (
                       <Link to={`/product/${i._id}`}>
                         <div className="w-full flex items-start-py-3">
                           <img
-                            src={`${backend_url}/${i.images[0]}`}
+                            src={`${i.images[0]}`}
                             alt=""
                             className="w-[40px] h-[40px] mr-[10px]"
                           />
@@ -117,7 +117,7 @@ const Header = ({ activeHeading }) => {
       <div
         className={`${
           active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
-        } transition hidden 800px:flex items-center justify-between w-full bg-[#ee561a] h-[70px]`}
+        } transition hidden 800px:flex items-center justify-between w-full bg-gradient-to-r from-orange-800 to-rose-900  h-[70px]`}
       >
         <div
           className={`${styles.section} relative ${styles.noramlFlex} justify-between`}
@@ -162,7 +162,7 @@ const Header = ({ activeHeading }) => {
               </div>
             </div>
 
-            {/* <div className={`${styles.noramlFlex}`}>
+            <div className={`${styles.noramlFlex}`}>
               <div
                 className="relative cursor-pointer mr-[15px]"
                 onClick={() => setOpenCart(true)}
@@ -175,14 +175,14 @@ const Header = ({ activeHeading }) => {
                   {cart && cart.length}
                 </span>
               </div>
-            </div> */}
+            </div>
 
             <div className={`${styles.noramlFlex}`}>
               <div className="relative cursor-pointer mr-[15px]">
                 {isAuthenticated ? (
                   <Link to="/profile">
                     <img
-                      src={`${backend_url}/${user.avatar}`}
+                      src={`${user?.avatar}`}
                       className="w-[35px] h-[35px] rounded-full"
                       alt=""
                     />
@@ -196,7 +196,7 @@ const Header = ({ activeHeading }) => {
             </div>
 
             {/* cart popup */}
-            {/* {openCart ? <Cart setOpenCart={setOpenCart} /> : null} */}
+            {openCart ? <Cart setOpenCart={setOpenCart} /> : null}
 
             {/* wishlist popup */}
             {openWishlist ? (
@@ -227,22 +227,30 @@ const Header = ({ activeHeading }) => {
               className="flex items-center justify-center w-full flex-grow md:flex-grow-0"
             >
               <img
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWrSp15yfq72YesIb4pHCwwIEACQkvqKMA9NHyiYDgZ02-ibPX7XiTMQ_8UBki5jnxYZDNSQSOItkBeD6kd0f55GeyRFYhfgo7XKHb4s_Y8M2DdigMdRfXyXmTtseZ2t83LtKSwmx-qIjHd_rHlFrglsg3z-6oZdwbFWlNRPrv2vKWgfoS1q3BtiMY7A/s60/uniconnect%20(1).png"
-                alt=""
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWrSp15yfq72YesIb4pHCwwIEACQkvqKMA9NHyiYDgZ02-ibPX7XiTMQ_8UBki5jnxYZDNSQSOItkBeD6kd0f55GeyRFYhfgo7XKHb4s_Y8M2DdigMdRfXyXmTtseZ2t83LtKSwmx-qIjHd_rHlFrglsg3z-6oZdwbFWlNRPrv2vKWgfoS1q3BtiMY7A/s80/uniconnect%20(1).png"
+                alt="UniConnect"
               />
               <h2 className="text-palette-secondary align-center font-black sm:text-2xl relative right-">
                 UniConnect
               </h2>
             </Link>
           </div>
-          {/* <div>
-            <div className="relative mr-[20px]">
+          <div>
+            <div
+              className="relative mr-[20px]"
+              onClick={() => setOpenCart(true)}
+            >
               <AiOutlineShoppingCart size={30} />
               <span class="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px]  leading-tight text-center">
                 {cart && cart.length}
               </span>
             </div>
-          </div> */}
+          </div>
+          {/* cart popup */}
+          {openCart ? <Cart setOpenCart={setOpenCart} /> : null}
+
+          {/* wishlist popup */}
+          {openWishlist ? <Wishlist setOpenWishlist={setOpenWishlist} /> : null}
         </div>
 
         {/* header sidebar */}
@@ -250,10 +258,13 @@ const Header = ({ activeHeading }) => {
           <div
             className={`fixed w-full bg-[#0000005f] z-20 h-full top-0 left-0`}
           >
-            <div className="fixed w-[60%] bg-[#fff] h-screen top-0 left-0 z-10 overflow-y-scroll">
+            <div className="fixed w-[70%] bg-[#fff] h-screen top-0 left-0 z-10 overflow-y-scroll">
               <div className="w-full justify-between flex pr-3">
                 <div>
-                  <div className="relative mr-[15px]">
+                  <div
+                    className="relative mr-[15px]"
+                    onClick={() => setOpenWishlist(true) || setOpen(false)}
+                  >
                     <AiOutlineHeart size={30} className="mt-5 ml-3" />
                     <span class="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px]  leading-tight text-center">
                       {wishlist && wishlist.length}
@@ -271,7 +282,7 @@ const Header = ({ activeHeading }) => {
                 <input
                   type="search"
                   placeholder="Search Product..."
-                  className="h-[40px] w-full px-2 border-[#ee561a] border-[2px] rounded-md"
+                  className="h-[40px] w-full px-2 border-[#3957db] border-[2px] rounded-md"
                   value={searchTerm}
                   onChange={handleSearchChange}
                 />
@@ -315,7 +326,7 @@ const Header = ({ activeHeading }) => {
                   <div>
                     <Link to="/profile">
                       <img
-                        src={`${backend_url}/${user.avatar}`}
+                        src={`${user.avatar}`}
                         alt=""
                         className="w-[60px] h-[60px] rounded-full border-[3px] border-[#0eae88]"
                       />
