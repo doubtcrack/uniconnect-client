@@ -121,45 +121,32 @@ const ProductDetails = ({ data }) => {
                 <img
                   src={`${data && data.images[select]}`}
                   alt=""
-                  className="w-[80%]"
+                  className="rounded-md"
                 />
-                <div className="w-full flex">
+                <div className="w-full flex justify-center mt-2">
                   {data &&
                     data.images.map((i, index) => (
                       <div
                         className={`${
-                          select === 0 ? "border" : "null"
+                          select === index ? "border rounded-lg" : "null"
                         } cursor-pointer`}
                       >
                         <img
                           src={`${i}`}
                           alt=""
-                          className="h-[200px] overflow-hidden mr-3 mt-3"
+                          className="h-[100px] overflow-hidden m-3 rounded-lg"
                           onClick={() => setSelect(index)}
                         />
                       </div>
                     ))}
-                  <div
-                    className={`${
-                      select === 1 ? "border" : "null"
-                    } cursor-pointer`}
-                  ></div>
                 </div>
               </div>
               <div className="w-full 800px:w-[50%] pt-5">
                 <h1 className={`${styles.productTitle}`}>{data.name}</h1>
-                <p>{data.description}</p>
-                <div className="flex pt-3">
-                  <h4 className={`${styles.productDiscountPrice}`}>
-                    {data.discountPrice}$
-                  </h4>
-                  <h3 className={`${styles.price}`}>
-                    {data.originalPrice ? data.originalPrice + "$" : null}
-                  </h3>
-                </div>
+                <p className="mt-4">{data.description}</p>
 
                 <div className="flex items-center mt-12 justify-between pr-3">
-                  <div>
+                  {/* <div>
                     <button
                       className="bg-gradient-to-r from-teal-400 to-teal-500 text-white font-bold rounded-l px-4 py-2 shadow-lg hover:opacity-75 transition duration-300 ease-in-out"
                       onClick={decrementCount}
@@ -175,6 +162,14 @@ const ProductDetails = ({ data }) => {
                     >
                       +
                     </button>
+                  </div> */}
+                  <div className="flex pt-3">
+                    <h4 className={`${styles.productDiscountPrice}`}>
+                      {data.discountPrice} Rs.
+                    </h4>
+                    <h3 className={`${styles.price}`}>
+                      {data.originalPrice ? data.originalPrice + " Rs." : null}
+                    </h3>
                   </div>
                   <div>
                     {click ? (
