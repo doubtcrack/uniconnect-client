@@ -83,7 +83,7 @@ const Header = ({ activeHeading }) => {
               size={30}
               className="absolute right-2 top-1.5 cursor-pointer"
             />
-            {searchData && searchData.length !== 0 ? (
+            {searchData && searchData.length && searchTerm.length !== 0 ? (
               <div className="absolute min-h-[30vh] bg-slate-50 shadow-sm-2 z-[9] p-4">
                 {searchData &&
                   searchData.map((i, index) => {
@@ -107,7 +107,7 @@ const Header = ({ activeHeading }) => {
           <div className={`${styles.button}`}>
             <Link to={`${isSeller ? "/dashboard" : "/shop-create"}`}>
               <h1 className="text-[#fff] flex items-center">
-                {isSeller ? "Go Dashboard" : "Become Seller"}{" "}
+                {isSeller ? "Go Dashboard" : "Join The Community"}{" "}
                 <IoIosArrowForward className="ml-1" />
               </h1>
             </Link>
@@ -216,7 +216,7 @@ const Header = ({ activeHeading }) => {
         <div className="w-full flex items-center justify-between">
           <div>
             <BiMenuAltLeft
-              size={40}
+              size={30}
               className="ml-4"
               onClick={() => setOpen(true)}
             />
@@ -229,6 +229,7 @@ const Header = ({ activeHeading }) => {
               <img
                 src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWrSp15yfq72YesIb4pHCwwIEACQkvqKMA9NHyiYDgZ02-ibPX7XiTMQ_8UBki5jnxYZDNSQSOItkBeD6kd0f55GeyRFYhfgo7XKHb4s_Y8M2DdigMdRfXyXmTtseZ2t83LtKSwmx-qIjHd_rHlFrglsg3z-6oZdwbFWlNRPrv2vKWgfoS1q3BtiMY7A/s80/uniconnect%20(1).png"
                 alt="UniConnect"
+                width="30%"
               />
               <h2 className="text-palette-secondary align-center font-black sm:text-2xl relative right-">
                 UniConnect
@@ -286,34 +287,31 @@ const Header = ({ activeHeading }) => {
                   value={searchTerm}
                   onChange={handleSearchChange}
                 />
-                {searchData && (
+                {searchData && searchData.length && searchTerm.length !== 0 ? (
                   <div className="absolute bg-[#fff] z-10 shadow w-full left-0 p-3">
                     {searchData.map((i) => {
-                      const d = i.name;
-
-                      const Product_name = d.replace(/\s+/g, "-");
                       return (
-                        <Link to={`/product/${Product_name}`}>
-                          <div className="flex items-center">
+                        <Link to={`/product/${i._id}`}>
+                          <div className="w-full flex items-center">
                             <img
-                              src={i.image_Url[0].url}
+                              src={`${i.images[0]}`}
                               alt=""
                               className="w-[50px] mr-2"
                             />
-                            <h5>{i.name}</h5>
+                            <h1>{i.name}</h1>
                           </div>
                         </Link>
                       );
                     })}
                   </div>
-                )}
+                ) : null}
               </div>
 
               <Navbar active={activeHeading} />
-              <div className={`${styles.button} ml-4 !rounded-[4px]`}>
+              <div className={`${styles.button} mx-4 !rounded-[4px]`}>
                 <Link to="/shop-create">
-                  <h1 className="text-[#fff] flex items-center">
-                    Become Seller <IoIosArrowForward className="ml-1" />
+                  <h1 className="text-[#fff] flex items-center p-3">
+                    Join The Community <IoIosArrowForward className="ml-1" />
                   </h1>
                 </Link>
               </div>

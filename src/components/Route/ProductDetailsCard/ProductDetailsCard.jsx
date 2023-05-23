@@ -73,29 +73,37 @@ const ProductDetailsCard = ({ setOpen, data }) => {
   return (
     <div className="bg-[#fff]">
       {data ? (
-        <div className="fixed w-full h-screen top-0 left-0 bg-[#00000030] z-40 flex items-center justify-center">
-          <div className="w-[90%] 800px:w-[60%] h-[90vh] overflow-y-scroll 800px:h-[75vh] bg-white rounded-md shadow-sm relative p-4">
-            <RxCross1
-              size={30}
-              className="absolute right-3 top-3 z-50"
-              onClick={() => setOpen(false)}
-            />
+        <div className="fixed w-scren h-screen top-0 left-0 bg-[#00000063] z-[100] flex items-center justify-center">
+          <div className="w-[95%] 800px:w-[60%] h-[97vh] overflow-y-scroll 800px:h-[75vh] bg-white rounded-md shadow-sm relative p-4">
+            <div className="bg-white w-[40px] h-[40px] rounded-full m-3 shadow-2xl absolute right-3 top-3 flex justify-center items-center ">
+              <RxCross1
+                size={20}
+                className="z-50"
+                onClick={() => setOpen(false)}
+              />
+            </div>
 
             <div className="block w-full 800px:flex">
               <div className="w-full 800px:w-[50%]">
-                <img src={`${data.images && data.images[0]}`} alt="" />
-                <div className="flex">
+                <img
+                  src={`${data.images && data.images[0]}`}
+                  alt=""
+                  className="rounded-md"
+                />
+                <div className="flex mt-3">
                   <Link to={`/shop/preview/${data.shop._id}`} className="flex">
-                    <img
-                      src={`${data?.shop?.avatar}`}
-                      alt=""
-                      className="w-[50px] h-[50px] rounded-full mr-2"
-                    />
+                    <div className="flex items-center">
+                      <img
+                        src={`${data?.shop?.avatar}`}
+                        alt=""
+                        className="w-[30px] h-[30px] rounded-full object-cover mx-2.5"
+                      />
+                    </div>
                     <div>
                       <h3 className={`${styles.shop_name}`}>
                         {data.shop.name}
                       </h3>
-                      <h5 className="pb-3 text-[15px]">(4.5) Ratings</h5>
+                      {/* <h5 className="pb-3 text-[15px]">(4.5) Ratings</h5> */}
                     </div>
                   </Link>
                 </div>
@@ -107,25 +115,24 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                     Send Message <AiOutlineMessage className="ml-1" />
                   </span>
                 </div>
-                <h5 className="text-[16px] text-[red] mt-5">(50) Sold out</h5>
+                {/* <h5 className="text-[16px] text-[red] mt-5">(50) Sold out</h5> */}
               </div>
 
               <div className="w-full 800px:w-[50%] pt-5 pl-[5px] pr-[5px]">
-                <h1 className={`${styles.productTitle} text-[20px]`}>
-                  {data.name}
-                </h1>
-                <p>{data.description}</p>
+                <div className="800px:m-8">
+                  <h1 className={`${styles.productTitle} `}>{data.name}</h1>
+                  <p className="mt-4">{data.description}</p>
 
-                <div className="flex pt-3">
-                  <h4 className={`${styles.productDiscountPrice}`}>
-                    {data.discountPrice}$
-                  </h4>
-                  <h3 className={`${styles.price}`}>
-                    {data.originalPrice ? data.originalPrice + "$" : null}
-                  </h3>
-                </div>
-                <div className="flex items-center mt-12 justify-between pr-3">
-                  <div>
+                  <div className="flex pt-3">
+                    <h4 className={`${styles.productDiscountPrice}`}>
+                      {data.discountPrice} Rs.
+                    </h4>
+                    <h3 className={`${styles.price}`}>
+                      {data.originalPrice ? data.originalPrice + " Rs." : null}
+                    </h3>
+                  </div>
+                  <div className="flex items-center mt-12 justify-between pr-3">
+                    {/* <div>
                     <button
                       className="bg-gradient-to-r from-teal-400 to-teal-500 text-white font-bold rounded-l px-4 py-2 shadow-lg hover:opacity-75 transition duration-300 ease-in-out"
                       onClick={decrementCount}
@@ -141,33 +148,34 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                     >
                       +
                     </button>
+                  </div> */}
+                    <div>
+                      {click ? (
+                        <AiFillHeart
+                          size={30}
+                          className="cursor-pointer"
+                          onClick={() => removeFromWishlistHandler(data)}
+                          color={click ? "red" : "#333"}
+                          title="Remove from wishlist"
+                        />
+                      ) : (
+                        <AiOutlineHeart
+                          size={30}
+                          className="cursor-pointer"
+                          onClick={() => addToWishlistHandler(data)}
+                          title="Add to wishlist"
+                        />
+                      )}
+                    </div>
                   </div>
-                  <div>
-                    {click ? (
-                      <AiFillHeart
-                        size={30}
-                        className="cursor-pointer"
-                        onClick={() => removeFromWishlistHandler(data)}
-                        color={click ? "red" : "#333"}
-                        title="Remove from wishlist"
-                      />
-                    ) : (
-                      <AiOutlineHeart
-                        size={30}
-                        className="cursor-pointer"
-                        onClick={() => addToWishlistHandler(data)}
-                        title="Add to wishlist"
-                      />
-                    )}
+                  <div
+                    className={`${styles.button} mt-6 rounded-[4px] h-11 flex items-center`}
+                    onClick={() => addToCartHandler(data._id)}
+                  >
+                    <span className="text-[#fff] flex items-center">
+                      Add to cart <AiOutlineShoppingCart className="ml-1" />
+                    </span>
                   </div>
-                </div>
-                <div
-                  className={`${styles.button} mt-6 rounded-[4px] h-11 flex items-center`}
-                  onClick={() => addToCartHandler(data._id)}
-                >
-                  <span className="text-[#fff] flex items-center">
-                    Add to cart <AiOutlineShoppingCart className="ml-1" />
-                  </span>
                 </div>
               </div>
             </div>
