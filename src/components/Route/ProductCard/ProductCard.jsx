@@ -120,7 +120,7 @@ const ProductCard = ({ data, isEvent }) => {
             <img
               src={data.shop.avatar}
               alt="contributor"
-              class="w-[30px] h-[30px] rounded-full object-cover mx-2.5"
+              class="w-[30px] h-[30px] mx-2.5 object-cover relative cursor-pointer overflow-hidden rounded-full border border-border-100 p-1"
             />
           </div>
 

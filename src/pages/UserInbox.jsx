@@ -204,29 +204,31 @@ const UserInbox = () => {
   }, [messages]);
 
   return (
-    <div className="w-full">
+    <div className="w-full ">
       {!open && (
         <>
           <Header />
-          <h1 className="text-center text-[30px] py-3 font-Poppins">
-            All Messages
-          </h1>
-          {/* All messages list */}
-          {conversations &&
-            conversations.map((item, index) => (
-              <MessageList
-                data={item}
-                key={index}
-                index={index}
-                setOpen={setOpen}
-                setCurrentChat={setCurrentChat}
-                me={user?._id}
-                setUserData={setUserData}
-                userData={userData}
-                online={onlineCheck(item)}
-                setActiveStatus={setActiveStatus}
-              />
-            ))}
+          <div className="w-[auto] bg-white h-[auto] overflow-y-scroll rounded-lg p-2 m-2 mt-8 800px:p-5">
+            <h1 className="text-center text-[25px] py-3 font-Poppins">
+              All Messages
+            </h1>
+            {/* All messages list */}
+            {conversations &&
+              conversations.map((item, index) => (
+                <MessageList
+                  data={item}
+                  key={index}
+                  index={index}
+                  setOpen={setOpen}
+                  setCurrentChat={setCurrentChat}
+                  me={user?._id}
+                  setUserData={setUserData}
+                  userData={userData}
+                  online={onlineCheck(item)}
+                  setActiveStatus={setActiveStatus}
+                />
+              ))}
+          </div>
         </>
       )}
 
@@ -284,7 +286,7 @@ const MessageList = ({
   return (
     <div
       className={`w-full flex p-3 px-3 ${
-        active === index ? "bg-[#00000010]" : "bg-transparent"
+        active === index ? "bg-[#00000010] rounded-md" : "bg-transparent"
       }  cursor-pointer`}
       onClick={(e) =>
         setActive(index) ||
@@ -298,17 +300,17 @@ const MessageList = ({
         <img
           src={`${user?.avatar}`}
           alt=""
-          className="w-[50px] h-[50px] rounded-full"
+          className="object-cover relative h-10 w-10 cursor-pointer overflow-hidden rounded-full border border-border-100 p-1"
         />
         {online ? (
-          <div className="w-[12px] h-[12px] bg-green-400 rounded-full absolute top-[2px] right-[2px]" />
+          <div className="w-[10px] h-[10px] bg-green-400 rounded-full absolute top-[1px] right-[1px]" />
         ) : (
-          <div className="w-[12px] h-[12px] bg-[#c7b9b9] rounded-full absolute top-[2px] right-[2px]" />
+          <div className="w-[10px] h-[10px] bg-[#c7b9b9] rounded-full absolute top-[1px] right-[1px]" />
         )}
       </div>
       <div className="pl-3">
         <h1 className="text-[18px]">{user?.name}</h1>
-        <p className="text-[16px] text-[#000c]">
+        <p className="text-[14px] text-[#000]">
           {data?.lastMessageId !== userData?._id
             ? "You:"
             : userData?.name.split(" ")[0] + ": "}{" "}
@@ -332,14 +334,14 @@ const SellerInbox = ({
   handleImageUpload,
 }) => {
   return (
-    <div className="w-[full] min-h-[90%] flex flex-col justify-between p-5 rounded-lg">
+    <div className="w-full h-full  flex flex-col justify-between p-2 800px:p-5 rounded-lg">
       {/* message header */}
       <div className="w-full flex p-3 items-center justify-between rounded-t-xl bg-slate-200">
         <div className="flex">
           <img
             src={`${userData?.avatar}`}
             alt=""
-            className="w-[35px] h-[35px] rounded-full"
+            className="object-cover relative w-[35px] h-[35px] cursor-pointer overflow-hidden rounded-full border border-border-100 p-1"
           />
           <div className="pl-3 flex items-center justify-between">
             <h1 className="text-[16px] font-[500]">{userData?.name}</h1>
@@ -366,7 +368,7 @@ const SellerInbox = ({
               {item.sender !== sellerId && (
                 <img
                   src={`${userData?.avatar}`}
-                  className="w-[35px] h-[35px] rounded-full mr-3"
+                  className="w-[30px] h-[30px] mr-3 object-cover relative cursor-pointer overflow-hidden rounded-full border border-border-100 p-1"
                   alt=""
                 />
               )}
