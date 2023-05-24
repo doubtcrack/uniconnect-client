@@ -61,7 +61,7 @@ const ShopInfo = ({ isOwner }) => {
               <img
                 src={`${data.avatar}`}
                 alt=""
-                className="w-[150px] h-[150px] object-cover rounded-full"
+                className="bject-cover relative h-40 w-40 cursor-pointer overflow-hidden rounded-full border border-border-100 p-4"
               />
             </div>
             <h3 className="text-center py-2 text-[20px]">{data.name}</h3>
@@ -69,25 +69,27 @@ const ShopInfo = ({ isOwner }) => {
               {data.description}
             </p>
           </div>
-          <div className="p-3">
+          {/* <div className="p-3">
             <h5 className="font-[600]">Address</h5>
             <h4 className="text-[#000000a6]">{data.address}</h4>
+          </div> */}
+          <div className="p-3 flex">
+            <h5 className="font-[600] w-[50%]">Phone Number</h5>
+            <h4 className="text-[#000000a6] w-[50%]">{data.phoneNumber}</h4>
           </div>
-          <div className="p-3">
-            <h5 className="font-[600]">Phone Number</h5>
-            <h4 className="text-[#000000a6]">{data.phoneNumber}</h4>
+          <div className="p-3 flex">
+            <h5 className="font-[600] w-[50%]">Total Products</h5>
+            <h4 className="text-[#000000a6] w-[50%]">
+              {products && products.length}
+            </h4>
           </div>
-          <div className="p-3">
-            <h5 className="font-[600]">Total Products</h5>
-            <h4 className="text-[#000000a6]">{products && products.length}</h4>
+          <div className="p-3 flex ">
+            <h5 className="font-[600] w-[50%]">Shop Ratings</h5>
+            <h4 className="text-[#000000b0] w-[50%]">{averageRating}/5</h4>
           </div>
-          <div className="p-3">
-            <h5 className="font-[600]">Shop Ratings</h5>
-            <h4 className="text-[#000000b0]">{averageRating}/5</h4>
-          </div>
-          <div className="p-3">
-            <h5 className="font-[600]">Joined On</h5>
-            <h4 className="text-[#000000b0]">
+          <div className="p-3 flex">
+            <h5 className="font-[600]  w-[50%]">Joined On</h5>
+            <h4 className="text-[#000000b0]  w-[50%]">
               {data?.createdAt?.slice(0, 10)}
             </h4>
           </div>
