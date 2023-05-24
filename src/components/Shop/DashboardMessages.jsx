@@ -205,7 +205,7 @@ const DashboardMessages = () => {
   }, [messages]);
 
   return (
-    <div className="w-[90%] bg-white m-5 h-[85vh] overflow-y-scroll rounded">
+    <div className="w-[90%] bg-white m-5 h-[85vh] overflow-y-scroll rounded-lg p-2 800px:p-5">
       {!open && (
         <>
           <h1 className="text-center text-[30px] py-3 font-Poppins">

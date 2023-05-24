@@ -85,7 +85,7 @@ const AllOrders = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <div className="w-full mx-8 pt-1 mt-10 bg-white">
+        <div className="w-full block my-4 mx-2 800px:m-4 min-h-[45vh] bg-white rounded-lg p-2 800px:p-5">
           <DataGrid
             rows={row}
             columns={columns}

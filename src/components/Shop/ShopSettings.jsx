@@ -70,16 +70,16 @@ const ShopSettings = () => {
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center">
+    <div className="w-full 800px:w-[50%] min-h-screen flex flex-col items-center m-4 bg-white rounded-lg p-2 800px:p-5">
       <div className="flex w-full 800px:w-[80%] flex-col justify-center my-5">
         <div className="w-full flex items-center justify-center">
           <div className="relative">
             <img
-              src={avatar ? URL.createObjectURL(avatar) : `/${seller.avatar}`}
+              src={avatar ? URL.createObjectURL(avatar) : `${seller.avatar}`}
               alt=""
-              className="w-[200px] h-[200px] rounded-full cursor-pointer"
+              className="object-cover relative h-40 w-40 cursor-pointer overflow-hidden rounded-full border border-border-100 p-4"
             />
-            <div className="w-[30px] h-[30px] bg-[#E3E9EE] rounded-full flex items-center justify-center cursor-pointer absolute bottom-[10px] right-[15px]">
+            <div className="w-[30px] h-[30px] bg-[#E3E9EE] rounded-full flex items-center justify-center cursor-pointer absolute bottom-[10px] right-[1px]">
               <input
                 type="file"
                 id="image"
