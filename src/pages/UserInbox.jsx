@@ -6,7 +6,8 @@ import { format } from "timeago.js";
 import { backend_url, server, socket_server } from "../server";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { AiOutlineArrowRight, AiOutlineSend } from "react-icons/ai";
+import { AiOutlineArrowRight } from "react-icons/ai";
+import { BsSend } from "react-icons/bs";
 import { TfiGallery } from "react-icons/tfi";
 import styles from "../styles/styles";
 const ENDPOINT = socket_server;
@@ -331,17 +332,17 @@ const SellerInbox = ({
   handleImageUpload,
 }) => {
   return (
-    <div className="w-[full] min-h-full flex flex-col justify-between p-5">
+    <div className="w-[full] min-h-[90%] flex flex-col justify-between p-5 rounded-lg">
       {/* message header */}
-      <div className="w-full flex p-3 items-center justify-between bg-slate-200">
+      <div className="w-full flex p-3 items-center justify-between rounded-t-xl bg-slate-200">
         <div className="flex">
           <img
             src={`${userData?.avatar}`}
             alt=""
-            className="w-[60px] h-[60px] rounded-full"
+            className="w-[35px] h-[35px] rounded-full"
           />
-          <div className="pl-3">
-            <h1 className="text-[18px] font-[600]">{userData?.name}</h1>
+          <div className="pl-3 flex items-center justify-between">
+            <h1 className="text-[16px] font-[500]">{userData?.name}</h1>
             <h1>{activeStatus ? "Active Now" : ""}</h1>
           </div>
         </div>
@@ -353,7 +354,7 @@ const SellerInbox = ({
       </div>
 
       {/* messages */}
-      <div className="px-3 h-[75vh] py-3 overflow-y-scroll">
+      <div className="px-3 h-[75vh] bg-[#f3f3f3] p-8 overflow-y-scroll">
         {messages &&
           messages.map((item, index) => (
             <div
@@ -365,22 +366,22 @@ const SellerInbox = ({
               {item.sender !== sellerId && (
                 <img
                   src={`${userData?.avatar}`}
-                  className="w-[40px] h-[40px] rounded-full mr-3"
+                  className="w-[35px] h-[35px] rounded-full mr-3"
                   alt=""
                 />
               )}
               {item.images && (
                 <img
                   src={`${item.images}`}
-                  className="w-[300px] h-[300px] object-cover rounded-[10px] ml-2 mb-2"
+                  className="w-[120px] h-[120px] 800px:w-[200px] 800px:h-[200px] object-cover rounded-lg ml-2 mb-2"
                 />
               )}
               {item.text !== "" && (
                 <div>
                   <div
-                    className={`w-max p-2 rounded ${
-                      item.sender === sellerId ? "bg-[#000]" : "bg-[#38c776]"
-                    } text-[#fff] h-min`}
+                    className={`relative ml-3 text-sm py-2 px-4 shadow rounded-xl ${
+                      item.sender === sellerId ? "bg-indigo-100" : "bg-white"
+                    } text-gray-800 h-min`}
                   >
                     <p>{item.text}</p>
                   </div>
@@ -397,10 +398,10 @@ const SellerInbox = ({
       {/* send message input */}
       <form
         aria-required={true}
-        className="p-3 relative w-full flex justify-between items-center"
+        className="flex flex-row items-center h-16 rounded-b-xl bg-white w-full px-4"
         onSubmit={sendMessageHandler}
       >
-        <div className="w-[30px]">
+        <div>
           <input
             type="file"
             name=""
@@ -409,25 +410,32 @@ const SellerInbox = ({
             onChange={handleImageUpload}
           />
           <label htmlFor="image">
-            <TfiGallery className="cursor-pointer" size={20} />
-          </label>
-        </div>
-        <div className="w-full">
-          <input
-            type="text"
-            required
-            placeholder="Enter your message..."
-            value={newMessage}
-            onChange={(e) => setNewMessage(e.target.value)}
-            className={`${styles.input}`}
-          />
-          <input type="submit" value="Send" className="hidden" id="send" />
-          <label htmlFor="send">
-            <AiOutlineSend
+            <TfiGallery
+              className="flex items-center justify-center text-gray-400 hover:text-gray-600 cursor-pointer"
               size={20}
-              className="absolute right-4 top-5 cursor-pointer"
             />
           </label>
+        </div>
+        <div className="flex-grow ml-4">
+          <div className="relative w-full">
+            <input
+              type="text"
+              required
+              placeholder="Enter your message..."
+              value={newMessage}
+              onChange={(e) => setNewMessage(e.target.value)}
+              className={`flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10`}
+            />
+            <input type="submit" value="Send" className="hidden" id="send" />
+          </div>
+        </div>
+        <div className="ml-4">
+          <button class="flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0">
+            <span className="hidden 800px:block">Send</span>
+            <label htmlFor="send">
+              <BsSend size={12} className="cursor-pointer m-2 " />
+            </label>
+          </button>
         </div>
       </form>
     </div>
