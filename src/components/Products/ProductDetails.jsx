@@ -141,7 +141,7 @@ const ProductDetails = ({ data }) => {
                     ))}
                 </div>
               </div>
-              <div className="w-full 800px:w-[50%] pt-5">
+              <div className="w-full 800px:w-[50%] pt-5 800px:p-2">
                 <h1 className={`${styles.productTitle}`}>{data.name}</h1>
                 <p className="mt-4">{data.description}</p>
 

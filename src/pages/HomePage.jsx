@@ -15,9 +15,9 @@ const HomePage = () => {
       <Hero />
       <Categories />
       <BestDeals />
-      <Events />
+      {/* <Events /> */}
       <FeaturedProduct />
-      <Sponsored />
+      {/* <Sponsored /> */}
       <Footer />
     </div>
   );
