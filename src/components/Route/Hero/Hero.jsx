@@ -5,30 +5,29 @@ import styles from "../../../styles/styles";
 const Hero = () => {
   return (
     <div
-      className={`relative min-h-[70vh] 800px:min-h-[80vh] w-full bg-no-repeat ${styles.noramlFlex}`}
+      className={`relative w-[100%] h-[50vh] md:h-[70vh] bg-cover bg-center bg-no-repeat flex justify-center items-center`}
       style={{
         backgroundImage:
-          "url(https://themes.rslahmed.dev/rafcart/assets/images/banner-2.jpg)",
+          "url(https://uniconnect-v2.vercel.app/images/slider-img/digital-banner.webp)",
       }}
     >
-      <div className={`${styles.section} w-[90%] 800px:w-[60%]`}>
-        <h1
-          className={`text-[35px] leading-[1.2] 800px:text-[60px] text-[#3d3a3a] font-[600] capitalize`}
-        >
-          Best Collection for <br /> home Decoration
-        </h1>
-        <p className="pt-5 text-[16px] font-[Poppins] font-[400] text-[#000000ba]">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae,
-          assumenda? Quisquam itaque <br /> exercitationem labore vel, dolore
-          quidem asperiores, laudantium temporibus soluta optio consequatur{" "}
-          <br /> aliquam deserunt officia. Dolorum saepe nulla provident.
+      <div
+        className={`backdrop-filter backdrop-blur-[12px] bg-[rgba(252,251,255,0.6)] p-3 md:p-8 lg:p-10 shadow-lg md:overflow-hidden rounded-md md:w-[60%] lg:w-[50%] md:mt-auto absolute m-2 md:top-[45%] md:right-[25%] md:bottom-auto`}
+      >
+        <h3 className={`text-lg md:text-2xl lg:text-3xl font-medium`}>
+          Academic Resources at Fingertips!
+        </h3>
+        <p class="text-[13px] md:text-lg mt-2 md:mt-4 lg:mt-8">
+          You will be given the access to academic notes, books, previous year
+          papers, etc., so finding the perfect study material is now easier than
+          ever.
         </p>
         <Link to="/products" className="inline-block">
-            <div className={`${styles.button} mt-5`}>
-                 <span className="text-[#fff] font-[Poppins] text-[18px]">
-                    Shop Now
-                 </span>
-            </div>
+          <div className={`${styles.button} mt-5`}>
+            <span className="text-[#fff] font-[Poppins] text-[18px]">
+              Shop Now
+            </span>
+          </div>
         </Link>
       </div>
     </div>

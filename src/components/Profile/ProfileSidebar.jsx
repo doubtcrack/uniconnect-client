@@ -58,19 +58,6 @@ const ProfileSidebar = ({ setActive, active }) => {
           Orders
         </span>
       </div>
-      {/* <div
-        className="flex items-center cursor-pointer w-full mb-8"
-        onClick={() => setActive(3)}
-      >
-        <HiOutlineReceiptRefund size={20} color={active === 3 ? "red" : ""} />
-        <span
-          className={`pl-3 ${
-            active === 3 ? "text-[red]" : ""
-          } 800px:block hidden`}
-        >
-          Refunds
-        </span>
-      </div> */}
 
       <div
         className="flex items-center cursor-pointer w-full mb-8"
@@ -113,20 +100,6 @@ const ProfileSidebar = ({ setActive, active }) => {
           Change Password
         </span>
       </div>
-
-      {/* <div
-        className="flex items-center cursor-pointer w-full mb-8"
-        onClick={() => setActive(7)}
-      >
-        <TbAddressBook size={20} color={active === 7 ? "red" : ""} />
-        <span
-          className={`pl-3 ${
-            active === 7 ? "text-[red]" : ""
-          } 800px:block hidden`}
-        >
-          Address
-        </span>
-      </div> */}
 
       {user && user?.role === "Admin" && (
         <Link to="/admin/dashboard">
