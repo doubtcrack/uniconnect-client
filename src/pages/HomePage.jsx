@@ -8,12 +8,14 @@ import Events from "../components/Events/Events";
 import Sponsored from "../components/Route/Sponsored";
 import Footer from "../components/Layout/Footer";
 import Faq from "../components/FAQ/FAQ";
+import Services from "../components/Services/services";
 
 const HomePage = () => {
   return (
     <div>
       <Header activeHeading={1} />
       <Hero />
+      <Services />
       <Categories />
       <BestDeals />
       {/* <Events /> */}
