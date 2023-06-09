@@ -5,7 +5,7 @@ import styles from "../../../styles/styles";
 const Hero = () => {
   return (
     <div
-      className={`relative w-[100%] h-[60vh] lg:h-[50vh] bg-cover bg-center bg-no-repeat flex justify-center items-center`}
+      className={`relative w-[100%] h-[60vh] lg:h-[73vh] bg-cover bg-center bg-no-repeat flex justify-center items-center`}
       style={{
         backgroundImage:
           "url(https://uniconnect-v2.vercel.app/images/slider-img/digital-banner.webp)",

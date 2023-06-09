@@ -12,9 +12,9 @@ const ProductCardSkeleton = () => {
     >
       <div className="flex mb-4">
         <div className="flex align-center justify-center w-4/5">
-          <div class="flex items-center justify-center h-40 w-60 bg-gray-300 rounded-md shadow-xl mt-3 mb-4 dark:bg-gray-700">
+          <div class="flex items-center justify-center h-40 w-60 bg-gray-300 rounded-md shadow-xl mt-3 mb-4 ">
             <svg
-              class="w-12 h-12 text-gray-200 dark:text-gray-600"
+              class="w-12 h-12 text-gray-200 "
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
               fill="currentColor"
@@ -32,7 +32,7 @@ const ProductCardSkeleton = () => {
       </div>
       <div class="flex items-center">
         <svg
-          class="text-gray-200 w-[35px] h-[35px] mx-2.5 dark:text-gray-700 border rounded-full border-border-100 p-1"
+          class="text-gray-200 w-[35px] h-[35px] mx-2.5  border rounded-full border-border-100 p-1"
           aria-hidden="true"
           fill="currentColor"
           viewBox="0 0 20 20"
@@ -45,13 +45,13 @@ const ProductCardSkeleton = () => {
           ></path>
         </svg>
         <div>
-          <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32 mb-2"></div>
+          <div class="h-2.5 bg-gray-200 rounded-full  w-32 mb-2"></div>
         </div>
       </div>
 
-      <div class="mt-2 h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
-      <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
-      <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 w-32"></div>
+      <div class="mt-2 h-2 bg-gray-200 rounded-full  mb-2.5"></div>
+      <div class="h-2 bg-gray-200 rounded-full  mb-2.5"></div>
+      <div class="h-2 bg-gray-200 rounded-full  w-32"></div>
       {/* <span class="sr-only">Loading...</span> */}
     </div>
   );
