@@ -8,11 +8,11 @@ const EventsPage = () => {
   const { allEvents, isLoading } = useSelector((state) => state.events);
   return (
     <>
+      <Header activeHeading={4} />
       {isLoading ? (
         <Loader />
       ) : (
         <div>
-          <Header activeHeading={4} />
           <EventCard active={true} data={allEvents && allEvents[0]} />
         </div>
       )}

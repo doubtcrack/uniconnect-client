@@ -19,10 +19,10 @@ const Faq = () => {
         <div className="text-center">
           <SectionTitle title={"FAQ"} />
         </div>
-        <div className="mx-auto my-4 sm:w-[80vw]">
+        <div className="mx-4 my-4 sm:mx-auto  sm:w-[80vw]">
           {/* single Faq */}
 
-          <div className="bg-white my-2 shadow-lg p-4 rounded-md">
+          <div className="bg-white my-2 shadow-md p-4 rounded-md">
             <button
               className="flex items-center justify-between w-full"
               onClick={() => toggleTab(2)}
@@ -72,7 +72,7 @@ const Faq = () => {
             )}
           </div>
 
-          <div className="bg-white my-2 shadow-lg p-4 rounded-md">
+          <div className="bg-white my-2 shadow-md p-4 rounded-md">
             <button
               className="flex items-center justify-between w-full"
               onClick={() => toggleTab(3)}
@@ -121,7 +121,7 @@ const Faq = () => {
             )}
           </div>
 
-          <div className="bg-white my-2 shadow-lg p-4 rounded-md">
+          <div className="bg-white my-2 shadow-md p-4 rounded-md">
             <button
               className="flex items-center justify-between w-full"
               onClick={() => toggleTab(4)}
@@ -171,7 +171,7 @@ const Faq = () => {
             )}
           </div>
 
-          <div className="bg-white my-2 shadow-lg p-4 rounded-md">
+          <div className="bg-white my-2 shadow-md p-4 rounded-md">
             <button
               className="flex items-center justify-between w-full"
               onClick={() => toggleTab(5)}
@@ -221,7 +221,7 @@ const Faq = () => {
             )}
           </div>
 
-          <div className="bg-white my-2 shadow-lg p-4 rounded-md">
+          <div className="bg-white my-2 shadow-md p-4 rounded-md">
             <button
               className="flex items-center justify-between w-full"
               onClick={() => toggleTab(6)}
@@ -268,7 +268,7 @@ const Faq = () => {
             )}
           </div>
 
-          <div className="bg-white my-2 shadow-lg p-4 rounded-md">
+          <div className="bg-white my-2 shadow-md p-4 rounded-md">
             <button
               className="flex items-center justify-between w-full"
               onClick={() => toggleTab(7)}
