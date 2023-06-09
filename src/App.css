@@ -24,9 +24,10 @@
   border-radius: 100vw;
 }
 body {
-  font-family: Open Sans, system-ui, sans-serif;
-  background: #efefef;
+  font-family: "Poppins", "Roboto", "sans-serif";
+  background: #f3f4f5;
   scroll-behavior: smooth;
+  color: #424750;
 }
 input,
 select {
@@ -55,4 +56,45 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+/* category style for mobile */
+#carousel-vp {
+  width: 770px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+}
+
+@media (max-width: 770px) {
+  #carousel-vp {
+    width: 510px;
+  }
+}
+
+@media (max-width: 510px) {
+  #carousel-vp {
+    width: 250px;
+  }
+}
+
+#Carousel #Carousel-inner {
+  display: flex;
+  position: absolute;
+  transition: 0.3s ease-in-out;
+  gap: 10px;
+  left: 0px;
+}
+
+.Carousel-item {
+  width: 250px;
+  height: 365px;
+  border: 2px solid white;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }

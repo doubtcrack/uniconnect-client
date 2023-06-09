@@ -7,6 +7,7 @@ import FeaturedProduct from "../components/Route/FeaturedProduct/FeaturedProduct
 import Events from "../components/Events/Events";
 import Sponsored from "../components/Route/Sponsored";
 import Footer from "../components/Layout/Footer";
+import Faq from "../components/FAQ/FAQ";
 
 const HomePage = () => {
   return (
@@ -18,6 +19,7 @@ const HomePage = () => {
       {/* <Events /> */}
       <FeaturedProduct />
       {/* <Sponsored /> */}
+      <Faq />
       <Footer />
     </div>
   );

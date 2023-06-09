@@ -77,51 +77,127 @@ export const categoriesData = [
   {
     id: 1,
     title: "Digital Gadgets",
-    subTitle: "",
+    description: "We offer the newest products at the most competitive prices",
     image_Url:
       "https://uniconnect-v2.vercel.app/_next/image?url=%2Fimages%2Fcategory-img%2Fdigital-category.webp&w=256&q=75",
+    imgWidth: 190,
+    imgHeight: 240,
+    styles: {
+      background:
+        "linear-gradient(216deg, rgba(173, 244, 206, 1) 16%, rgba(173, 232, 244, 1) 100% )",
+      flexDirection: "row",
+      paddingBlock: "2rem",
+      paddingInline: "1rem",
+      gridColumn: "span 3 / span 3",
+    },
   },
   {
     id: 2,
     title: "Cloths & Accesories",
-    subTitle: "",
+    description: "The most popular brands with the most reasonable prices",
     image_Url:
       "https://uniconnect-v2.vercel.app/_next/image?url=%2Fimages%2Fcategory-img%2Ffashion-category.webp&w=256&q=75",
+    imgWidth: 200,
+    imgHeight: 220,
+    styles: {
+      background:
+        "linear-gradient(216deg, rgba(255, 186, 125, 1) 16%, rgba(255, 167, 139, 1) 100% )",
+      flexDirection: "row",
+      paddingInline: "1rem",
+      paddingBlock: "2rem",
+      gridRow: "span 6 / span 6",
+      gridColumn: "span 3 / span 3",
+    },
   },
   {
     id: 3,
-    title: "Furniture & Room Stuff",
-    subTitle: "",
+    title: "Digital Files",
+    description:
+      "Access the e-books, notes, previous year papers and make your learning easier by best learning resources.",
     image_Url:
-      "https://uniconnect-v2.vercel.app/_next/image?url=%2Fimages%2Fcategory-img%2Fhouse-category.webp&w=384&q=75",
+      "https://uniconnect-v2.vercel.app/_next/image?url=%2Fimages%2Fcategory-img%2FdigitalFiles-category.webp&w=828&q=75",
+    imgWidth: 190,
+    imgHeight: 240,
+    styles: {
+      background:
+        "linear-gradient(126deg, rgba(215, 215, 215, 1) 16%, rgba(242, 241, 241, 1) 100%)",
+      flexDirection: "row",
+      paddingInline: "1rem",
+      paddingBlock: "0.5rem",
+      gridRow: "span 6 / span 6",
+      gridColumn: "span 3 / span 3",
+    },
   },
   {
     id: 4,
     title: "Sports & Trip",
-    subTitle: "",
+    description: "Variety in choice",
     image_Url:
       "https://uniconnect-v2.vercel.app/_next/image?url=%2Fimages%2Fcategory-img%2Fsport-category.webp&w=256&q=75",
+    imgWidth: 130,
+    imgHeight: 150,
+    styles: {
+      background:
+        "linear-gradient(216deg,rgb(235 255 0) 16%,rgba(255, 214, 10, 1) 100%)",
+      flexDirection: "row-reverse",
+      paddingInline: "1rem",
+      paddingBlock: "2rem",
+      gridRow: "span 5 / span 5",
+      gridColumn: "span 3 / span 3",
+    },
   },
   {
     id: 5,
     title: "Books, Stationery & Art",
-    subTitle: "",
+    description: "Variety in choice",
     image_Url:
       "https://uniconnect-v2.vercel.app/_next/image?url=%2Fimages%2Fcategory-img%2Fstationery-category.webp&w=384&q=75",
+    imgWidth: 300,
+    imgHeight: 250,
+    styles: {
+      background: "#ffe3ee",
+      flexDirection: "row",
+      paddingInline: "1rem",
+      paddingBlock: "unset",
+      gridRow: "span 2 / span 2",
+      gridColumn: "span 4 / span 4",
+    },
   },
   {
     id: 6,
-    title: "Digital Files",
-    subTitle: "",
+    title: "Furniture & Room Stuff",
+    description: "In accordance with the designs of the day",
     image_Url:
-      "https://uniconnect-v2.vercel.app/_next/image?url=%2Fimages%2Fcategory-img%2FdigitalFiles-category.webp&w=828&q=75",
+      "https://uniconnect-v2.vercel.app/_next/image?url=%2Fimages%2Fcategory-img%2Fhouse-category.webp&w=384&q=75",
+    imgWidth: 320,
+    imgHeight: 240,
+    styles: {
+      background: "#e1ebc0",
+      flexDirection: "row",
+      paddingInline: "1rem",
+      paddingBlock: "unset",
+      gridRow: "span 2 / span 2",
+      gridColumn: "span 5 / span 5",
+    },
   },
   {
     id: 7,
     title: "Others",
-    subTitle: "",
+    description: "Variety in choice",
     image_Url:
-      "https://img.freepik.com/free-photo/3d-render-online-education-survey-test-concept_107791-15665.jpg?w=996&t=st=1680856647~exp=1680857247~hmac=6206d6420a137682d1f95e593bc624462dca8b85d78581d60318555a23182844",
+      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiy8dPShr-XdhSGEqtKIhOYPHFo-9r4NW8R2NccpZ4KyQvSMOzA2bfrFhVW-he2FWt-Cb2jgJ15wRq13mPDf3as0c70sZXTDArgyW3nsISro7iVUCWYCO1TzmVjwLTPiRaatGKhx1SHire0INt0rFIEYuUuTJVo2zNV9tnm5rZyZmlRQ-icryL6Vy6peQ/s320/%5Bremoval.ai%5D_tmp-6479eaafaaf0b.png",
+    imgWidth: 200,
+    imgHeight: 240,
+    styles: {
+      background: "#dfdfe1",
+      flexDirection: "row-reverse",
+      paddingInline: "1rem",
+      paddingBlock: "2rem",
+      gridRow: "span 2 / span 2",
+      gridColumn: "span 9 / span 9",
+      position: "relative",
+      justifyContent: "center",
+    },
   },
 ];
 
