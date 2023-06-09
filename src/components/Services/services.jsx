@@ -3,13 +3,14 @@ import { brandingData } from "../../static/data";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 
 const Services = () => {
-  let scrollValue = document.querySelector("#servicesCard").clientWidth;
-  // console.log("HELLLLLOOOoO");
+  // const scrollValue = document.querySelector("#servicesCard").clientWidth;
+  // console.log(scrollValue);
+
   const scrollLeft = () => {
-    document.getElementById("content").scrollLeft -= scrollValue;
+    document.getElementById("content").scrollLeft -= 400;
   };
   const scrollRight = () => {
-    document.getElementById("content").scrollLeft += scrollValue;
+    document.getElementById("content").scrollLeft += 400;
   };
   return (
     <>
