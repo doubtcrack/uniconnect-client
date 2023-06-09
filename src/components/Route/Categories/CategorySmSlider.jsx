@@ -54,11 +54,11 @@ const Card = ({ id, title, description, styles, image_Url }) => {
     <div
       key={id}
       style={styles}
-      className={`card bg-white w-[90vw] h-[300px] m-2 rounded-lg shadow-lg flex !flex-row !p-8 md:w-[47.5vw]`}
+      className={`card bg-white w-[90vw] justify-between items-center h-[200px] sm:h-[250px] m-2 rounded-lg shadow-lg flex !flex-row !p-8 md:w-[47.5vw]`}
     >
       <div className="mx-[0.5rem]">
         <h3 className="text-xl 2xl:text-2xl font-[500]">{title}</h3>
-        <p className="text-sm mt-2">{description}</p>
+        <p className="hidden sm:block text-sm mt-2">{description}</p>
         <a
           className="inline-block py-3 px-2 2xl:px-4 mt-4 bg-palette-primary hover:scale-105 transition-transform duration-300 shadow-xl text-sm text-palette-side rounded-lg"
           onClick={() => handleSubmit(title)}
@@ -69,7 +69,7 @@ const Card = ({ id, title, description, styles, image_Url }) => {
       <img
         src={image_Url}
         alt={title}
-        className="drop-shadow-lg hover:scale-95 transition-transform duration-300 h-[200px] w-[200px]"
+        className="drop-shadow-lg hover:scale-95 transition-transform duration-300 h-[120px] w-[120px] sm:h-[200px] sm:w-[200px]"
       />
     </div>
   );

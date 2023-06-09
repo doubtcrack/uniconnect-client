@@ -14,15 +14,15 @@ const Faq = () => {
   };
 
   return (
-    <div className={`${styles.section} my-8 flex justify-center items-center`}>
+    <div className={` my-8 flex justify-center items-center`}>
       <div>
         <div className="text-center">
           <SectionTitle title={"FAQ"} />
         </div>
-        <div className="mx-auto space-y-4">
+        <div className="mx-auto my-4 sm:w-[80vw]">
           {/* single Faq */}
 
-          <div className="bg-white my-2 shadow-lg p-4 rounded-md ">
+          <div className="bg-white my-2 shadow-lg p-4 rounded-md">
             <button
               className="flex items-center justify-between w-full"
               onClick={() => toggleTab(2)}
