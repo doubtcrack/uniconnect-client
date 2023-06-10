@@ -12,12 +12,12 @@ export const loadUser = () => async (dispatch) => {
     });
     dispatch({
       type: "LoadUserSuccess",
-      payload: data.user,
+      payload: data?.user,
     });
   } catch (error) {
     dispatch({
       type: "LoadUserFail",
-      payload: error.response.data.message,
+      payload: error.response.data?.message,
     });
   }
 };
@@ -33,12 +33,12 @@ export const loadSeller = () => async (dispatch) => {
     });
     dispatch({
       type: "LoadSellerSuccess",
-      payload: data.seller,
+      payload: data?.seller,
     });
   } catch (error) {
     dispatch({
       type: "LoadSellerFail",
-      payload: error.response.data.message,
+      payload: error.response.data?.message,
     });
   }
 };
@@ -69,12 +69,12 @@ export const updateUserInformation =
 
       dispatch({
         type: "updateUserInfoSuccess",
-        payload: data.user,
+        payload: data?.user,
       });
     } catch (error) {
       dispatch({
         type: "updateUserInfoFailed",
-        payload: error.response.data.message,
+        payload: error.response.data?.message,
       });
     }
   };
@@ -105,13 +105,13 @@ export const updatUserAddress =
         type: "updateUserAddressSuccess",
         payload: {
           successMessage: "User address updated succesfully!",
-          user: data.user,
+          user: data?.user,
         },
       });
     } catch (error) {
       dispatch({
         type: "updateUserAddressFailed",
-        payload: error.response.data.message,
+        payload: error.response.data?.message,
       });
     }
   };
@@ -132,13 +132,13 @@ export const deleteUserAddress = (id) => async (dispatch) => {
       type: "deleteUserAddressSuccess",
       payload: {
         successMessage: "User deleted successfully!",
-        user: data.user,
+        user: data?.user,
       },
     });
   } catch (error) {
     dispatch({
       type: "deleteUserAddressFailed",
-      payload: error.response.data.message,
+      payload: error.response.data?.message,
     });
   }
 };
@@ -156,12 +156,12 @@ export const getAllUsers = () => async (dispatch) => {
 
     dispatch({
       type: "getAllUsersSuccess",
-      payload: data.users,
+      payload: data?.users,
     });
   } catch (error) {
     dispatch({
       type: "getAllUsersFailed",
-      payload: error.response.data.message,
+      payload: error.response.data?.message,
     });
   }
 };

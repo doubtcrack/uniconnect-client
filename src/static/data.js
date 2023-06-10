@@ -93,7 +93,7 @@ export const categoriesData = [
   },
   {
     id: 2,
-    title: "Cloths & Accesories",
+    title: "Cloths and Accesories",
     description: "The most popular brands with the most reasonable prices",
     image_Url:
       "https://uniconnect-v2.vercel.app/_next/image?url=%2Fimages%2Fcategory-img%2Ffashion-category.webp&w=256&q=75",
@@ -130,7 +130,7 @@ export const categoriesData = [
   },
   {
     id: 4,
-    title: "Sports & Trip",
+    title: "Sports and Trip",
     description: "Variety in choice",
     image_Url:
       "https://uniconnect-v2.vercel.app/_next/image?url=%2Fimages%2Fcategory-img%2Fsport-category.webp&w=256&q=75",
@@ -148,7 +148,7 @@ export const categoriesData = [
   },
   {
     id: 5,
-    title: "Books, Stationery & Art",
+    title: "Books and Stationery",
     description: "Variety in choice",
     image_Url:
       "https://uniconnect-v2.vercel.app/_next/image?url=%2Fimages%2Fcategory-img%2Fstationery-category.webp&w=384&q=75",
@@ -165,7 +165,7 @@ export const categoriesData = [
   },
   {
     id: 6,
-    title: "Furniture & Room Stuff",
+    title: "Furniture and Room Stuff",
     description: "In accordance with the designs of the day",
     image_Url:
       "https://uniconnect-v2.vercel.app/_next/image?url=%2Fimages%2Fcategory-img%2Fhouse-category.webp&w=384&q=75",

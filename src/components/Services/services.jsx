@@ -4,17 +4,16 @@ import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 
 const Services = () => {
   // const scrollValue = document.querySelector("#servicesCard").clientWidth;
-  // console.log(scrollValue);
 
   const scrollLeft = () => {
-    document.getElementById("content").scrollLeft -= 400;
+    document.getElementById("ServiceContent").scrollLeft -= 400;
   };
   const scrollRight = () => {
-    document.getElementById("content").scrollLeft += 400;
+    document.getElementById("ServiceContent").scrollLeft += 400;
   };
   return (
     <>
-      <div className="border-t border-border-200 bg-light px-6 py-5 h-[30vh] flex justify-center items-center">
+      <div className="border-y border-border-200 bg-light px-6 py-5 flex justify-center items-center">
         <div className="relative w-full flex justify-center items-center lg:w-[90%] ">
           <div className="prev absolute top-2/4 z-2 -mt-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-border-200 border-opacity-70 bg-light text-heading shadow-xl transition-all duration-200 hover:border-accent hover:bg-accent hover:text-light -left-4 md:-mt-5 md:h-9 md:w-9 md:-left-5 ">
             <button
@@ -33,7 +32,7 @@ const Services = () => {
             </button>
           </div>
           <div
-            id="content"
+            id="ServiceContent"
             className="carousel lg:p-4 w-full overflow-y-hidden flex items-center justify-start overflow-x-auto scroll-smooth scrollbar-hide"
           >
             {brandingData &&
