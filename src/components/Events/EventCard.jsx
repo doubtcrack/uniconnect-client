@@ -54,10 +54,10 @@ const EventCard = ({ active, data }) => {
         <br />
         <div className="flex items-center">
           <Link to={`/product/${data._id}?isEvent=true`}>
-            <div className={`${styles.button} text-[#fff]`}>See Details</div>
+            <div className={`${styles.button}`}>See Details</div>
           </Link>
           <div
-            className={`${styles.button} text-[#fff] ml-5`}
+            className={`${styles.button}  ml-5`}
             onClick={() => addToCartHandler(data)}
           >
             Add to cart

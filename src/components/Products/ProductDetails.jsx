@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { getAllProductsShop } from "../../redux/actions/product";
 import { backend_url, server } from "../../server";
-import styles from "../../styles/styles";
+import styles, { inlineStyle } from "../../styles/styles";
 import {
   addToWishlist,
   removeFromWishlist,
@@ -192,10 +192,10 @@ const ProductDetails = ({ data }) => {
                   </div>
                 </div>
                 <div
-                  className={`${styles.button} !mt-6 !rounded !h-11 flex items-center`}
+                  className={`${styles.button}`}
                   onClick={() => addToCartHandler(data._id)}
                 >
-                  <span className="text-white flex items-center">
+                  <span className=" flex items-center text-[18px] font-[600]">
                     Add to cart <AiOutlineShoppingCart className="ml-1" />
                   </span>
                 </div>
@@ -218,10 +218,10 @@ const ProductDetails = ({ data }) => {
                     </h5>
                   </div>
                   <div
-                    className={`${styles.button} bg-[#6443d1] mt-4 !rounded !h-11`}
+                    className={`${inlineStyle.checkoutButtons.class} !rounded`}
                     onClick={handleMessageSubmit}
                   >
-                    <span className="text-white flex items-center">
+                    <span className="text-white flex items-center text-[18px] font-[600]">
                       Send Message <AiOutlineMessage className="ml-1" />
                     </span>
                   </div>
@@ -369,10 +369,8 @@ const ProductDetailsInfo = ({
                 <span className="font-[500]">{totalReviewsLength}</span>
               </h5>
               <Link to="/">
-                <div
-                  className={`${styles.button} !rounded-[4px] !h-[39.5px] mt-3`}
-                >
-                  <h4 className="text-white">Visit Shop</h4>
+                <div className={`${styles.button}`}>
+                  <h4>Visit Shop</h4>
                 </div>
               </Link>
             </div>

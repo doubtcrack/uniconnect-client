@@ -74,7 +74,7 @@ const ProfileContent = ({ active }) => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full py-8 mx-1 rounded-lg md:mx-6 bg-white">
       {/* profile */}
       {active === 1 && (
         <>
@@ -270,7 +270,7 @@ const AllOrders = () => {
     });
 
   return (
-    <div className="pl-8 pt-1">
+    <div className="px-8 pt-1">
       <DataGrid
         rows={row}
         columns={columns}
@@ -358,7 +358,7 @@ const AllRefundOrders = () => {
     });
 
   return (
-    <div className="pl-8 pt-1">
+    <div className="px-8 pt-1">
       <DataGrid
         rows={row}
         columns={columns}
@@ -443,7 +443,7 @@ const TrackOrder = () => {
     });
 
   return (
-    <div className="pl-8 pt-1">
+    <div className="px-8 pt-1">
       <DataGrid
         rows={row}
         columns={columns}
@@ -733,7 +733,7 @@ const Address = () => {
           className={`${styles.button} !rounded-md`}
           onClick={() => setOpen(true)}
         >
-          <span className="text-[#fff]">Add New</span>
+          <span>Add New</span>
         </div>
       </div>
       <br />
@@ -744,19 +744,19 @@ const Address = () => {
             key={index}
           >
             <div className="flex items-center">
-              <h5 className="pl-5 font-[600]">{item.addressType}</h5>
+              <h5 className="px-5 font-[600]">{item.addressType}</h5>
             </div>
-            <div className="pl-8 flex items-center">
+            <div className="px-8 flex items-center">
               <h6 className="text-[12px] 800px:text-[unset]">
                 {item.address1} {item.address2}
               </h6>
             </div>
-            <div className="pl-8 flex items-center">
+            <div className="px-8 flex items-center">
               <h6 className="text-[12px] 800px:text-[unset]">
                 {user && user.phoneNumber}
               </h6>
             </div>
-            <div className="min-w-[10%] flex items-center justify-between pl-8">
+            <div className="min-w-[10%] flex items-center justify-between px-8">
               <AiOutlineDelete
                 size={25}
                 className="cursor-pointer"

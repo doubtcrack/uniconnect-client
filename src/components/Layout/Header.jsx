@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "../../styles/styles";
+import styles, { inlineStyle } from "../../styles/styles";
 import { categoriesData, productData } from "../../static/data";
 import {
   AiOutlineHeart,
@@ -71,29 +71,29 @@ const Header = ({ activeHeading }) => {
             </Link>
           </div>
           {/* search box */}
-          <div className="w-[50%] relative">
+          <div className="w-[40%] relative">
             <input
               type="text"
               placeholder="Search Product..."
               value={searchTerm}
               onChange={handleSearchChange}
-              className="h-[40px] w-full px-2 border-border-100 border rounded-t-lg"
+              className="h-[40px] w-full p-8 border-border-100 border rounded-full"
             />
             <AiOutlineSearch
               size={30}
-              className="absolute right-2 top-1.5 cursor-pointer"
+              className="absolute right-8 top-4 cursor-pointer"
             />
             {searchData && searchData.length && searchTerm.length !== 0 ? (
-              <div className="absolute min-h-[30vh] bg-[#fefefe] rounded-b-lg shadow-sm-2 z-[9] p-4">
+              <div className="absolute mt-2 w-full min-h-[30vh] bg-white  rounded-3xl shadow-lg z-[9] p-4">
                 {searchData &&
                   searchData.map((i, index) => {
                     return (
                       <Link to={`/product/${i._id}`}>
-                        <div className="w-full flex items-start-py-3">
+                        <div className="w-full  flex items-center border-dotted border-b border-gray-400 py-3">
                           <img
                             src={`${i.images[0]}`}
                             alt=""
-                            className="w-[40px] h-[40px] mr-[10px]"
+                            className="w-[60px] h-[80px] mr-[20px] rounded-md"
                           />
                           <h1>{i.name}</h1>
                         </div>
@@ -106,7 +106,7 @@ const Header = ({ activeHeading }) => {
 
           <div className={`${styles.button}`}>
             <Link to={`${isSeller ? "/dashboard" : "/shop-create"}`}>
-              <h1 className="text-[#fff] flex items-center p-2">
+              <h1 className=" flex items-center p-2">
                 {isSeller ? "Go Dashboard" : "Join The Community"}{" "}
                 <IoIosArrowForward className="ml-1" />
               </h1>
@@ -117,7 +117,10 @@ const Header = ({ activeHeading }) => {
       <div
         className={`${
           active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
-        } transition hidden 800px:flex items-center justify-between w-full bg-gradient-to-r from-orange-800 to-rose-900  h-[70px]`}
+        } transition hidden 800px:flex items-center justify-between w-full   h-[70px]`}
+        style={{
+          background: inlineStyle.primaryGradient.background,
+        }}
       >
         <div
           className={`${styles.section} relative ${styles.noramlFlex} justify-between`}
@@ -292,11 +295,11 @@ const Header = ({ activeHeading }) => {
                     {searchData.map((i) => {
                       return (
                         <Link to={`/product/${i._id}`}>
-                          <div className="w-full flex items-center">
+                          <div className="w-full  flex items-center border-dotted border-b border-gray-400 py-3">
                             <img
                               src={`${i.images[0]}`}
                               alt=""
-                              className="w-[50px] mr-2"
+                              className="w-[30px] h-[40px] mr-2 rounded-md"
                             />
                             <h1>{i.name}</h1>
                           </div>
@@ -310,7 +313,7 @@ const Header = ({ activeHeading }) => {
               <Navbar active={activeHeading} />
               <div className={`${styles.button} mx-4 !rounded-[4px]`}>
                 <Link to="/shop-create">
-                  <h1 className="text-[#fff] flex items-center p-3">
+                  <h1 className="flex items-center p-3">
                     Join The Community <IoIosArrowForward className="ml-1" />
                   </h1>
                 </Link>

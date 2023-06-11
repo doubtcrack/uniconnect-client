@@ -28,14 +28,14 @@ const Checkout = () => {
 
   return (
     <div className="w-full flex flex-col items-center py-8">
-      <div className="w-full 800px:w-[65%]">
+      <div className="w-full 800px:w-[65%] shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]">
         <ShippingInfo user={user} />
       </div>
       <div
         className={`${styles.button} w-[150px] 800px:w-[280px] mt-10`}
         onClick={paymentSubmit}
       >
-        <h5 className="text-white">Go to Payment</h5>
+        <h5>Go to Payment</h5>
       </div>
     </div>
   );

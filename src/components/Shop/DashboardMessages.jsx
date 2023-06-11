@@ -206,46 +206,48 @@ const DashboardMessages = () => {
   }, [messages]);
 
   return (
-    <div className="w-[90%] bg-white h-[87vh] overflow-y-scroll rounded-lg p-2 800px:p-5">
-      {!open && (
-        <>
-          <h1 className="text-center text-[25px] py-3 font-Poppins">
-            All Messages
-          </h1>
-          {/* All messages list */}
-          {conversations &&
-            conversations.map((item, index) => (
-              <MessageList
-                data={item}
-                key={index}
-                index={index}
-                setOpen={setOpen}
-                setCurrentChat={setCurrentChat}
-                me={seller._id}
-                setUserData={setUserData}
-                userData={userData}
-                online={onlineCheck(item)}
-                setActiveStatus={setActiveStatus}
-              />
-            ))}
-        </>
-      )}
+    <div className="bg-[#f3f4f5] min-h-screen pt-4 md:pt-8 w-full justify-center flex">
+      <div className="w-[90%] bg-white h-fit overflow-y-scroll rounded-lg p-2 800px:p-5">
+        {!open && (
+          <>
+            <h1 className="text-center text-[25px] py-3 font-Poppins">
+              All Messages
+            </h1>
+            {/* All messages list */}
+            {conversations &&
+              conversations.map((item, index) => (
+                <MessageList
+                  data={item}
+                  key={index}
+                  index={index}
+                  setOpen={setOpen}
+                  setCurrentChat={setCurrentChat}
+                  me={seller._id}
+                  setUserData={setUserData}
+                  userData={userData}
+                  online={onlineCheck(item)}
+                  setActiveStatus={setActiveStatus}
+                />
+              ))}
+          </>
+        )}
 
-      {open && (
-        <SellerInbox
-          setOpen={setOpen}
-          newMessage={newMessage}
-          setNewMessage={setNewMessage}
-          sendMessageHandler={sendMessageHandler}
-          messages={messages}
-          sellerId={seller._id}
-          userData={userData}
-          activeStatus={activeStatus}
-          scrollRef={scrollRef}
-          setMessages={setMessages}
-          handleImageUpload={handleImageUpload}
-        />
-      )}
+        {open && (
+          <SellerInbox
+            setOpen={setOpen}
+            newMessage={newMessage}
+            setNewMessage={setNewMessage}
+            sendMessageHandler={sendMessageHandler}
+            messages={messages}
+            sellerId={seller._id}
+            userData={userData}
+            activeStatus={activeStatus}
+            scrollRef={scrollRef}
+            setMessages={setMessages}
+            handleImageUpload={handleImageUpload}
+          />
+        )}
+      </div>
     </div>
   );
 };

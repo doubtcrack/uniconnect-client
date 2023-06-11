@@ -85,14 +85,16 @@ const AllOrders = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <div className="w-full block my-4 mx-2 800px:m-4 min-h-[45vh] bg-white rounded-lg p-2 800px:p-5">
-          <DataGrid
-            rows={row}
-            columns={columns}
-            pageSize={10}
-            disableSelectionOnClick
-            autoHeight
-          />
+        <div className="bg-[#f3f4f5] min-h-screen w-full justify-center flex">
+          <div className="w-[90%] block my-4 mx-2 800px:m-4 h-fit bg-white rounded-lg p-2 800px:p-5">
+            <DataGrid
+              rows={row}
+              columns={columns}
+              pageSize={10}
+              disableSelectionOnClick
+              autoHeight
+            />
+          </div>
         </div>
       )}
     </>

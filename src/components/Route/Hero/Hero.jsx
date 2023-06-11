@@ -5,7 +5,7 @@ import styles from "../../../styles/styles";
 const Hero = () => {
   return (
     <>
-      <div className="flex justify-center items-center mb-4 md:mb-0 md:flex-row flex-col-reverse gap-5 relative z-0 mx-4 md:mx-8">
+      <div className="flex justify-center items-center my-8 md:mb-0 md:flex-row flex-col-reverse gap-5 relative z-0 mx-4 md:mx-8">
         <div className="flex-1 padding-x h-fit">
           <h1 className="2xl:text-[64px] sm:text-[50px] text-[40px] font-semibold">
             Find Academic Resources at Fingertips! —quick and super easy!

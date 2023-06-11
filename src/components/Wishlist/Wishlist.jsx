@@ -26,7 +26,7 @@ const Wishlist = ({ setOpenWishlist }) => {
 
   return (
     <div className="fixed top-0 left-0 w-full bg-[#0000004b] h-screen z-10">
-      <div className="fixed top-0 right-0 h-full w-[80%] overflow-y-scroll 800px:w-[25%] bg-white flex flex-col justify-between shadow-sm">
+      <div className="fixed top-0 right-0 h-full w-[80%] overflow-y-scroll 800px:w-[30%] bg-white flex flex-col justify-between shadow-sm">
         {wishlist && wishlist.length === 0 ? (
           <div className="w-full h-screen flex items-center justify-center">
             <div className="flex w-full justify-end pt-5 pr-5 fixed top-3 right-3">
@@ -83,7 +83,7 @@ const CartSingle = ({ data, removeFromWishlistHandler, addToCartHandler }) => {
 
   return (
     <div className="border-b p-4">
-      <div className="w-full flex items-center">
+      <div className="w-full flex items-center justify-between">
         <img
           src={`${data?.images[0]}`}
           alt=""
@@ -94,7 +94,7 @@ const CartSingle = ({ data, removeFromWishlistHandler, addToCartHandler }) => {
           <h1>
             {data.name.length > 40 ? data.name.slice(0, 40) + "..." : data.name}
           </h1>
-          <h4 className="font-[600] pt-3 800px:pt-[3px] text-[17px] text-[#d02222] font-Roboto">
+          <h4 className="font-[600] pt-3 800px:pt-[3px] text-[17px] text-[#ff6f00] font-Roboto">
             {totalPrice} Rs.
           </h4>
         </div>

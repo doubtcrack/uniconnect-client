@@ -94,110 +94,101 @@ const ProductDetailsCard = ({ setOpen, data }) => {
   };
 
   return (
-    <div className="bg-[#fff]">
+    <>
+      <div class="fixed inset-0 bg-black bg-opacity-25 opacity-100 z-[5]"></div>
       {data ? (
-        <div className="fixed w-scren h-screen top-0 left-0 bg-[#00000063] z-[100] flex items-center justify-center">
-          <div className="w-[95%] 800px:w-[60%] h-[97vh] overflow-y-scroll 800px:h-[75vh] bg-white rounded-md shadow-sm relative p-4">
-            <div className="bg-white w-[40px] h-[40px] rounded-full m-3 shadow-2xl absolute right-3 top-3 flex justify-center items-center ">
-              <RxCross1
-                size={20}
-                className="z-50"
-                onClick={() => setOpen(false)}
-              />
-            </div>
-
-            <div className="block w-full 800px:flex">
-              <div className="w-full 800px:w-[50%]">
-                <img
-                  src={`${data.images && data.images[0]}`}
-                  alt=""
-                  className="rounded-md"
+        <div className="fixed inset-0 overflow-y-auto z-[6]">
+          <div className="flex min-h-full items-center justify-center p-4 text-center">
+            <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto overflow-x-hidden transform rounded-2xl bg-white p-6 text-left shadow-xl transition-all flex flex-col gap-5 opacity-100 scale-100">
+              <div className="absolute top-2 right-2 z-10 w-fit p-2 bg-[#f5f8ff] rounded-full">
+                <RxCross1
+                  size={20}
+                  className="z-50"
+                  onClick={() => setOpen(false)}
                 />
-                <div className="flex mt-3">
-                  <Link to={`/shop/preview/${data.shop._id}`} className="flex">
-                    <div className="flex items-center">
-                      <img
-                        src={`${data?.shop?.avatar}`}
-                        alt=""
-                        className="w-[30px] h-[30px] rounded-full object-cover mx-2.5"
-                      />
-                    </div>
-                    <div>
-                      <h3 className={`${styles.shop_name}`}>
-                        {data.shop.name}
-                      </h3>
-                      {/* <h5 className="pb-3 text-[15px]">(4.5) Ratings</h5> */}
-                    </div>
-                  </Link>
-                </div>
-                <div
-                  className={`${styles.button} bg-[#000] mt-4 rounded-[4px] h-11`}
-                  onClick={handleMessageSubmit}
-                >
-                  <span className="text-[#fff] flex items-center">
-                    Send Message <AiOutlineMessage className="ml-1" />
-                  </span>
-                </div>
-                {/* <h5 className="text-[16px] text-[red] mt-5">(50) Sold out</h5> */}
               </div>
-
-              <div className="w-full 800px:w-[50%] pt-5 pl-[5px] pr-[5px]">
-                <div className="800px:m-8">
-                  <h1 className={`${styles.productTitle} `}>{data.name}</h1>
-                  <p className="mt-4">{data.description}</p>
-
-                  <div className="flex pt-3">
-                    <h4 className={`${styles.productDiscountPrice}`}>
-                      {data.discountPrice} Rs.
-                    </h4>
-                    <h3 className={`${styles.price}`}>
-                      {data.originalPrice ? data.originalPrice + " Rs." : null}
-                    </h3>
-                  </div>
-                  <div className="flex items-center mt-12 justify-between pr-3">
-                    {/* <div>
-                    <button
-                      className="bg-gradient-to-r from-teal-400 to-teal-500 text-white font-bold rounded-l px-4 py-2 shadow-lg hover:opacity-75 transition duration-300 ease-in-out"
-                      onClick={decrementCount}
+              <div className="relative flex justify-center items-center w-full h-40 min-h-[120px] bg-[url('https://img.freepik.com/free-vector/abstract-orange-background-with-lines-halftone-effect_1017-32107.jpg?size=626&ext=jpg&ga=GA1.2.1418543111.1671995851&semt=ais')] bg-cover bg-center rounded-lg">
+                <h2 className="text-4xl md:text-5xl  font-[800] text-center text-white">
+                  Take a Look
+                </h2>
+              </div>
+              <div className="block w-full">
+                <div className="w-full">
+                  <img
+                    src={`${data.images && data.images[0]}`}
+                    alt=""
+                    className="rounded-lg max-h-300px"
+                  />
+                  <div className="flex mt-3 justify-between">
+                    <Link
+                      to={`/shop/preview/${data.shop._id}`}
+                      className="flex"
                     >
-                      -
-                    </button>
-                    <span className="bg-gray-200 text-gray-800 font-medium px-4 py-[11px]">
-                      {count}
-                    </span>
-                    <button
-                      className="bg-gradient-to-r from-teal-400 to-teal-500 text-white font-bold rounded-l px-4 py-2 shadow-lg hover:opacity-75 transition duration-300 ease-in-out"
-                      onClick={incrementCount}
-                    >
-                      +
-                    </button>
-                  </div> */}
-                    <div>
-                      {click ? (
-                        <AiFillHeart
-                          size={30}
-                          className="cursor-pointer"
-                          onClick={() => removeFromWishlistHandler(data)}
-                          color={click ? "red" : "#333"}
-                          title="Remove from wishlist"
+                      <div className="flex items-center">
+                        <img
+                          src={`${data?.shop?.avatar}`}
+                          alt=""
+                          className="w-[30px] h-[30px] rounded-full object-cover mx-2.5"
                         />
-                      ) : (
-                        <AiOutlineHeart
-                          size={30}
-                          className="cursor-pointer"
-                          onClick={() => addToWishlistHandler(data)}
-                          title="Add to wishlist"
-                        />
-                      )}
-                    </div>
+                      </div>
+                      <div>
+                        <h3 className={`${styles.shop_name}`}>
+                          {data.shop.name}
+                        </h3>
+                      </div>
+                    </Link>
+
+                    {click ? (
+                      <AiFillHeart
+                        size={30}
+                        className="cursor-pointer justify-center items-center"
+                        onClick={() => removeFromWishlistHandler(data)}
+                        color={click ? "red" : "#333"}
+                        title="Remove from wishlist"
+                      />
+                    ) : (
+                      <AiOutlineHeart
+                        size={30}
+                        className="cursor-pointer justify-center items-center"
+                        onClick={() => addToWishlistHandler(data)}
+                        title="Add to wishlist"
+                      />
+                    )}
                   </div>
                   <div
-                    className={`${styles.button} mt-6 rounded-[4px] h-11 flex items-center`}
-                    onClick={() => addToCartHandler(data._id)}
+                    className={`${styles.button}`}
+                    onClick={handleMessageSubmit}
                   >
-                    <span className="text-[#fff] flex items-center">
-                      Add to cart <AiOutlineShoppingCart className="ml-1" />
+                    <span className="flex items-center">
+                      Send Message <AiOutlineMessage className="ml-1" />
                     </span>
+                  </div>
+                  {/* <h5 className="text-[16px] text-[red] mt-5">(50) Sold out</h5> */}
+                </div>
+
+                <div className="w-full">
+                  <div className="text-center">
+                    <h1 className={`${styles.productTitle} `}>{data.name}</h1>
+                    <p className="mt-4">{data.description}</p>
+
+                    <div className="flex pt-3 my-8 justify-center">
+                      <h4 className={`${styles.productDiscountPrice}`}>
+                        {data.discountPrice} Rs.
+                      </h4>
+                      <h3 className={`${styles.price}`}>
+                        {data.originalPrice
+                          ? data.originalPrice + " Rs."
+                          : null}
+                      </h3>
+                    </div>
+                    <div
+                      className={`${styles.button}`}
+                      onClick={() => addToCartHandler(data._id)}
+                    >
+                      <span className="flex items-center">
+                        Add to cart <AiOutlineShoppingCart className="ml-1" />
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -205,7 +196,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
           </div>
         </div>
       ) : null}
-    </div>
+    </>
   );
 };
 

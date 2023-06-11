@@ -108,7 +108,7 @@ const WithdrawMoney = () => {
           Available Balance: ${availableBalance}
         </h5>
         <div
-          className={`${styles.button} text-white !h-[42px] !rounded`}
+          className={`${styles.button}`}
           onClick={() => (availableBalance < 50 ? error() : setOpen(true))}
         >
           Withdraw
@@ -255,10 +255,7 @@ const WithdrawMoney = () => {
                     />
                   </div>
 
-                  <button
-                    type="submit"
-                    className={`${styles.button} mb-3 text-white`}
-                  >
+                  <button type="submit" className={`${styles.button}`}>
                     Add
                   </button>
                 </form>
@@ -302,7 +299,7 @@ const WithdrawMoney = () => {
                         className="800px:w-[100px] w-[full] border 800px:mr-3 p-1 rounded"
                       />
                       <div
-                        className={`${styles.button} !h-[42px] text-white`}
+                        className={`${styles.button} `}
                         onClick={withdrawHandler}
                       >
                         Withdraw
@@ -316,7 +313,7 @@ const WithdrawMoney = () => {
                     </p>
                     <div className="w-full flex items-center">
                       <div
-                        className={`${styles.button} text-[#fff] text-[18px] mt-4`}
+                        className={`${styles.button}  text-[18px] mt-4`}
                         onClick={() => setPaymentMethod(true)}
                       >
                         Add new

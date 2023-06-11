@@ -17,11 +17,13 @@ const ProfilePage = () => {
         <Loader />
       ) : (
         <>
-          <div className={`${styles.section} flex bg-[#f5f5f5] py-10`}>
-            <div className="w-[50px] 800px:w-[335px] sticky 800px:mt-0 mt-[18%]">
-              <ProfileSideBar active={active} setActive={setActive} />
+          <div className="bg-[#f3f4f5] min-h-screen w-full justify-center flex">
+            <div className={`${styles.section} flex bg-[#f5f5f5] py-10`}>
+              <div className="w-[50px] 800px:w-[335px] sticky 800px:mt-0 mt-[18%]">
+                <ProfileSideBar active={active} setActive={setActive} />
+              </div>
+              <ProfileContent active={active} />
             </div>
-            <ProfileContent active={active} />
           </div>
         </>
       )}

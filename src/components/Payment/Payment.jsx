@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "../../styles/styles";
+import styles, { inlineStyle } from "../../styles/styles";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
@@ -57,10 +57,10 @@ const Payment = () => {
 };
 
 const PaymentInfo = ({ cashOnDeliveryHandler }) => {
-  const [select, setSelect] = useState(1);
+  const [select, setSelect] = useState(3);
 
   return (
-    <div className="w-[auto] 800px:w-[95%] bg-white rounded-md m-2 p-5 pb-8">
+    <div className="w-[auto] 800px:w-[95%] bg-white rounded-md m-2 p-5 pb-8 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]">
       {/* cash on delivery */}
       <div>
         <div className="flex w-full pb-5 border-b mb-2">
@@ -84,7 +84,7 @@ const PaymentInfo = ({ cashOnDeliveryHandler }) => {
               <input
                 type="submit"
                 value="Confirm"
-                className={`${styles.button} !bg-[#f63b60] text-[#fff] h-[45px] rounded-[5px] cursor-pointer text-[18px] font-[600]`}
+                className={`${inlineStyle.checkoutButtons.class}  !text-[#fff] cursor-pointer text-[18px] font-[600]`}
               />
             </form>
           </div>
