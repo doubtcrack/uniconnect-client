@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "../../../styles/styles";
+import { hero_image } from "../../../Assests/asssests";
 
 const Hero = () => {
   return (
@@ -17,14 +18,15 @@ const Hero = () => {
           </p>
           <Link to="/shop-create" className="inline-block">
             <button class="mt-5 bg-transparent hover:bg-orange-500 text-orange-500 font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded-full">
-              Button
+              Join the Community
             </button>
           </Link>
         </div>
         <div className="md:flex-[0.88] flex justify-end items-end w-full h-fit">
           <div className="relative w-full h-full z-0">
             <img
-              src="https://pngimg.com/d/student_PNG124.png"
+              src={hero_image}
+              loading="lazy"
               alt="hero"
               fill
               className="object-contain"

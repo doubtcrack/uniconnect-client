@@ -77,7 +77,7 @@ const Header = ({ activeHeading }) => {
               placeholder="Search Product..."
               value={searchTerm}
               onChange={handleSearchChange}
-              className="h-[40px] w-full p-8 border-border-100 border rounded-full"
+              className="h-[40px] w-full p-7 border-border-100 border rounded-full"
             />
             <AiOutlineSearch
               size={30}
