@@ -17,6 +17,7 @@ import {
   removeFromWishlist,
 } from "../../../redux/actions/wishlist";
 import axios from "axios";
+import { model_banner } from "../../../Assests/asssests";
 
 const ProductDetailsCard = ({ setOpen, data }) => {
   const { user, isAuthenticated } = useSelector((state) => state.user);
@@ -95,11 +96,14 @@ const ProductDetailsCard = ({ setOpen, data }) => {
 
   return (
     <>
-      <div class="fixed inset-0 bg-black bg-opacity-25 opacity-100 z-[5]"></div>
+      <div class="fixed inset-0 bg-black bg-opacity-25 opacity-100 z-50"></div>
       {data ? (
-        <div className="fixed inset-0 overflow-y-auto z-[6]">
+        <div className="fixed inset-0 overflow-y-auto z-50">
           <div className="flex min-h-full items-center justify-center p-4 text-center">
-            <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto overflow-x-hidden transform rounded-2xl bg-white p-6 text-left shadow-xl transition-all flex flex-col gap-5 opacity-100 scale-100">
+            <div
+              id="productdetailsmodel"
+              className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto overflow-x-hidden transform rounded-2xl bg-white p-6 text-left shadow-xl transition-all flex flex-col gap-5 opacity-100 scale-100"
+            >
               <div className="absolute top-2 right-2 z-10 w-fit p-2 bg-[#f5f8ff] rounded-full">
                 <RxCross1
                   size={20}
@@ -107,7 +111,10 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                   onClick={() => setOpen(false)}
                 />
               </div>
-              <div className="relative flex justify-center items-center w-full h-40 min-h-[120px] bg-[url('https://img.freepik.com/free-vector/abstract-orange-background-with-lines-halftone-effect_1017-32107.jpg?size=626&ext=jpg&ga=GA1.2.1418543111.1671995851&semt=ais')] bg-cover bg-center rounded-lg">
+              <div
+                style={{ backgroundImage: `url(${model_banner})` }}
+                className="relative flex justify-center items-center w-full h-40 min-h-[120px] bg-cover bg-center rounded-lg"
+              >
                 <h2 className="text-4xl md:text-5xl  font-[800] text-center text-white">
                   Take a Look
                 </h2>

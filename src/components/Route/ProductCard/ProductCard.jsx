@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import {
   AiFillHeart,
-  AiFillStar,
   AiOutlineEye,
   AiOutlineHeart,
   AiOutlineShoppingCart,
-  AiOutlineStar,
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { backend_url } from "../../../server";
 import styles from "../../../styles/styles";
 import { useDispatch, useSelector } from "react-redux";
 import ProductDetailsCard from "../ProductDetailsCard/ProductDetailsCard";
@@ -19,7 +16,6 @@ import {
 import { useEffect } from "react";
 import { addTocart } from "../../../redux/actions/cart";
 import { toast } from "react-toastify";
-import Ratings from "../../Products/Ratings";
 
 const ProductCard = ({ data, isEvent }) => {
   const { wishlist } = useSelector((state) => state.wishlist);
@@ -63,7 +59,7 @@ const ProductCard = ({ data, isEvent }) => {
 
   return (
     <>
-      <div className="h-80 w-full rounded-md bg-white shadow-sm p-3 relative cursor-pointer">
+      <div className="h-80 w-full rounded-md bg-white border border-gray-100 shadow-lg shadow-slate-100 p-3 relative cursor-pointer">
         <div className="flex">
           <Link
             to={`${
@@ -76,7 +72,7 @@ const ProductCard = ({ data, isEvent }) => {
             <img
               src={`${data.images && data.images[0]}`}
               alt=""
-              className="h-40 w-60 rounded-md shadow-xl mt-3 mb-4 transform -translate-y-2 hover:-translate-y-12 transition duration-700"
+              className="h-40 w-60 rounded-md mt-3 mb-4 transform -translate-y-2 hover:-translate-y-12 transition duration-700"
             />
           </Link>
           <div className="w-1/5 flex flex-col mt-4 mb-8 items-center justify-evenly">

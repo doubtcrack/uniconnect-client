@@ -8,13 +8,13 @@ const ProductCardSkeleton = () => {
   return (
     <div
       role="status"
-      class="animate-pulse h-80 w-full rounded-md bg-white shadow-sm p-3 relative"
+      class="animate-pulse h-80 w-full rounded-md bg-white border border-gray-100 shadow-md shadow-slate-100 p-3 relative"
     >
       <div className="flex mb-4">
         <div className="flex align-center justify-center w-4/5">
-          <div class="flex items-center justify-center h-40 w-60 bg-gray-300 rounded-md shadow-xl mt-3 mb-4 ">
+          <div class="flex items-center justify-center h-40 w-60 bg-gray-300 rounded-md mt-3 mb-4 ">
             <svg
-              class="w-12 h-12 text-gray-200 "
+              class="w-12 h-12 text-gray-200"
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
               fill="currentColor"

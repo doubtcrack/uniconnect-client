@@ -1,41 +1,46 @@
-import LoginPage from "../pages/Login";
-import SignupPage from "../pages/SignupPage";
-import ActivationPage from "../pages/ActivationPage";
-import HomePage from "../pages/HomePage";
-import ProductsPage from "../pages/ProductsPage";
-import BestSellingPage from "../pages/BestSellingPage";
-import EventsPage from "../pages/EventsPage";
-import FAQPage from "../pages/FAQPage";
-import CheckoutPage from "../pages/CheckoutPage";
-import PaymentPage from "../pages/PaymentPage";
-import OrderSuccessPage from "../pages/OrderSuccessPage";
-import ProductDetailsPage from "../pages/ProductDetailsPage";
-import ProfilePage from "../pages/ProfilePage";
-import ShopCreatePage from "../pages/ShopCreate";
-import SellerActivationPage from "../pages/SellerActivationPage";
-import ShopLoginPage from "../pages/ShopLoginPage";
-import OrderDetailsPage from "../pages/OrderDetailsPage";
-import TrackOrderPage from "../pages/TrackOrderPage";
-import UserInbox from "../pages/UserInbox.jsx";
+import React from "react";
+const LoginPage = React.lazy(() => import("../pages/Login"));
+const SignupPage = React.lazy(() => import("../pages/SignupPage"));
+const ActivationPage = React.lazy(() => import("../pages/ActivationPage"));
+const HomePage = React.lazy(() => import("../pages/HomePage"));
+const ProductsPage = React.lazy(() => import("../pages/ProductsPage"));
+const BestSellingPage = React.lazy(() => import("../pages/BestSellingPage"));
+const EventsPage = React.lazy(() => import("../pages/EventsPage"));
+const FAQPage = React.lazy(() => import("../pages/FAQPage"));
+const CheckoutPage = React.lazy(() => import("../pages/CheckoutPage"));
+const PaymentPage = React.lazy(() => import("../pages/PaymentPage"));
+const OrderSuccessPage = React.lazy(() => import("../pages/OrderSuccessPage"));
+const ProductDetailsPage = React.lazy(() =>
+  import("../pages/ProductDetailsPage")
+);
+const ProfilePage = React.lazy(() => import("../pages/ProfilePage"));
+const ShopCreatePage = React.lazy(() => import("../pages/ShopCreate"));
+const SellerActivationPage = React.lazy(() =>
+  import("../pages/SellerActivationPage")
+);
+const ShopLoginPage = React.lazy(() => import("../pages/ShopLoginPage"));
+const OrderDetailsPage = React.lazy(() => import("../pages/OrderDetailsPage"));
+const TrackOrderPage = React.lazy(() => import("../pages/TrackOrderPage"));
+const UserInbox = React.lazy(() => import("../pages/UserInbox.jsx"));
 
-export { 
-    LoginPage,
-    SignupPage,
-    ActivationPage,
-    HomePage,
-    ProductsPage,
-    BestSellingPage,
-    EventsPage,
-    FAQPage,
-    CheckoutPage,
-    PaymentPage,
-    OrderSuccessPage,
-    ProductDetailsPage,
-    ProfilePage,
-    ShopCreatePage,
-    SellerActivationPage,
-    ShopLoginPage,
-    OrderDetailsPage,
-    TrackOrderPage,
-    UserInbox
+export {
+  LoginPage,
+  SignupPage,
+  ActivationPage,
+  HomePage,
+  ProductsPage,
+  BestSellingPage,
+  EventsPage,
+  FAQPage,
+  CheckoutPage,
+  PaymentPage,
+  OrderSuccessPage,
+  ProductDetailsPage,
+  ProfilePage,
+  ShopCreatePage,
+  SellerActivationPage,
+  ShopLoginPage,
+  OrderDetailsPage,
+  TrackOrderPage,
+  UserInbox,
 };

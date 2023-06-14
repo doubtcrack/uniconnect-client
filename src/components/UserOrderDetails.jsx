@@ -117,8 +117,8 @@ const UserOrderDetails = () => {
       {/* review popup */}
       {open && (
         <>
-          <div class="fixed inset-0 bg-black bg-opacity-25 opacity-100"></div>
-          <div className="fixed inset-0 overflow-y-auto">
+          <div class="fixed inset-0 bg-black bg-opacity-25 opacity-100 z-50"></div>
+          <div className="fixed inset-0 overflow-y-auto z-50">
             <div className="flex min-h-full items-center justify-center p-4 text-center">
               <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto overflow-x-hidden transform rounded-2xl bg-white p-6 text-left shadow-xl transition-all flex flex-col gap-5 opacity-100 scale-100">
                 <div className="absolute top-2 right-2 z-10 w-fit p-2 bg-[#f5f8ff] rounded-full">

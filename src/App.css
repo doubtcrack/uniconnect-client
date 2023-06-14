@@ -100,6 +100,7 @@ input[type="number"] {
 }
 
 #ServiceContent::-webkit-scrollbar,
-#content::-webkit-scrollbar {
+#content::-webkit-scrollbar,
+#productdetailsmodel::-webkit-scrollbar {
   display: none;
 }

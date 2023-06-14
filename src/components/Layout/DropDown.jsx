@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../../styles/styles";
 
-const DropDown = ({ categoriesData, setDropDown }) => {
+const DropDown = ({ categoriesData, setDropDown, dropDown }) => {
   const navigate = useNavigate();
   const submitHandle = (i) => {
     navigate(`/products?category=${i.title}`);
@@ -10,7 +10,11 @@ const DropDown = ({ categoriesData, setDropDown }) => {
     window.location.reload();
   };
   return (
-    <div className="pb-4 w-[270px] bg-[#fff] absolute z-30 rounded-b-md shadow-sm">
+    <div
+      className={`pb-4 w-[270px] bg-[#fff] relative overflow-hidden z-30 rounded-b-md shadow-sm transition-all ease-in-out duration-1000 ${
+        dropDown ? "max-h-96" : "max-h-0"
+      }`}
+    >
       {categoriesData &&
         categoriesData.map((i, index) => (
           <div
