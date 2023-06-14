@@ -203,12 +203,13 @@ const Header = ({ activeHeading }) => {
             </div>
 
             {/* cart popup */}
-            {openCart ? <Cart setOpenCart={setOpenCart} /> : null}
+            <Cart setOpenCart={setOpenCart} openCart={openCart} />
 
             {/* wishlist popup */}
-            {openWishlist ? (
-              <Wishlist setOpenWishlist={setOpenWishlist} />
-            ) : null}
+            <Wishlist
+              setOpenWishlist={setOpenWishlist}
+              openWishlist={openWishlist}
+            />
           </div>
         </div>
       </div>
@@ -220,8 +221,8 @@ const Header = ({ activeHeading }) => {
         }
       w-full h-[60px] bg-[#fff] z-50 top-0 left-0 shadow-sm 800px:hidden`}
       >
-        {/* header sidebar */}
         <div className="w-full flex items-center justify-between">
+          {/* header sidebar */}
           <div>
             <BiMenuAltLeft
               size={30}
@@ -358,12 +359,15 @@ const Header = ({ activeHeading }) => {
               </span>
             </div>
           </div>
-          {/* cart popup */}
-          {openCart ? <Cart setOpenCart={setOpenCart} /> : null}
-
-          {/* wishlist popup */}
-          {openWishlist ? <Wishlist setOpenWishlist={setOpenWishlist} /> : null}
         </div>
+        {/* cart popup */}
+        <Cart setOpenCart={setOpenCart} openCart={openCart} />
+
+        {/* wishlist popup */}
+        <Wishlist
+          setOpenWishlist={setOpenWishlist}
+          openWishlist={openWishlist}
+        />
       </div>
     </>
   );
