@@ -57,6 +57,8 @@ import SellerProtectedRoute from "./routes/SellerProtectedRoute";
 import { getAllProducts } from "./redux/actions/product";
 import { getAllEvents } from "./redux/actions/event";
 import Loader from "./components/Layout/Loader";
+import BlogsPage from "./pages/BlogsPage";
+import BlogsDetailsPage from "./pages/BlogsDetailsPage";
 
 const App = () => {
   useEffect(() => {
@@ -96,6 +98,8 @@ const App = () => {
           <Route path="/best-selling" element={<BestSellingPage />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/faq" element={<FAQPage />} />
+          <Route path="/blogs" element={<BlogsPage />} />
+          <Route path="/blogs/:slug" element={<BlogsDetailsPage />} />
           <Route
             path="/checkout"
             element={
