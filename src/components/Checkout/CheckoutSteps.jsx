@@ -12,7 +12,7 @@ const CheckoutSteps = ({ active }) => {
           <div
             className={`${
               active > 1
-                ? `w-[30px] 800px:w-[70px] h-[4px] `
+                ? `w-[30px] 800px:w-[70px] h-[4px] !bg-[#ff6f00]`
                 : "w-[30px] 800px:w-[70px] h-[4px] !bg-[#feeee2]"
             }`}
           />
@@ -40,7 +40,7 @@ const CheckoutSteps = ({ active }) => {
           <div
             className={`${
               active > 3
-                ? `w-[30px] 800px:w-[70px] h-[4px] `
+                ? `w-[30px] 800px:w-[70px] h-[4px] !bg-[#ff6f00]`
                 : "w-[30px] 800px:w-[70px] h-[4px] !bg-[#feeee2]"
             }`}
           />
