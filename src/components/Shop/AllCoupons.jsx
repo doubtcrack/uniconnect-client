@@ -1,5 +1,5 @@
-import { Button } from "@material-ui/core";
-import { DataGrid } from "@material-ui/data-grid";
+
+import { DataGrid } from '@mui/x-data-grid';
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
@@ -98,9 +98,9 @@ const AllCoupons = () => {
       renderCell: (params) => {
         return (
           <>
-            <Button onClick={() => handleDelete(params.id)}>
+            <button onClick={() => handleDelete(params.id)}>
               <AiOutlineDelete size={20} />
-            </Button>
+            </button>
           </>
         );
       },

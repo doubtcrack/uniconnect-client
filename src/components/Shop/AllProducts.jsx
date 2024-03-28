@@ -1,5 +1,5 @@
-import { Button } from "@material-ui/core";
-import { DataGrid } from "@material-ui/data-grid";
+
+import { DataGrid } from '@mui/x-data-grid';
 import React, { useEffect } from "react";
 import { AiOutlineDelete, AiOutlineEye } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
@@ -63,9 +63,9 @@ const AllProducts = () => {
         return (
           <>
             <Link to={`/product/${params.id}`}>
-              <Button>
+              <button>
                 <AiOutlineEye size={20} />
-              </Button>
+              </button>
             </Link>
           </>
         );
@@ -81,9 +81,9 @@ const AllProducts = () => {
       renderCell: (params) => {
         return (
           <>
-            <Button onClick={() => handleDelete(params.id)}>
+            <button onClick={() => handleDelete(params.id)}>
               <AiOutlineDelete size={20} />
-            </Button>
+            </button>
           </>
         );
       },

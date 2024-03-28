@@ -1,5 +1,5 @@
-import { Button } from "@material-ui/core";
-import { DataGrid } from "@material-ui/data-grid";
+
+import { DataGrid } from '@mui/x-data-grid';
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import {  AiOutlineEye } from "react-icons/ai";
@@ -54,9 +54,9 @@ const AllEvents = () => {
         return (
           <>
             <Link to={`/product/${params.id}?isEvent=true`}>
-              <Button>
+              <button>
                 <AiOutlineEye size={20} />
-              </Button>
+              </button>
             </Link>
           </>
         );

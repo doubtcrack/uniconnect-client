@@ -69,6 +69,10 @@ input[type="number"] {
   margin: auto;
 }
 
+.greenColor {
+  color: green;
+}
+
 @media (max-width: 770px) {
   #carousel-vp {
     width: 510px;

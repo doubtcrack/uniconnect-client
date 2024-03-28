@@ -7,8 +7,8 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { backend_url, server } from "../../server";
 import styles from "../../styles/styles";
-import { DataGrid } from "@material-ui/data-grid";
-import { Button } from "@material-ui/core";
+import { DataGrid } from '@mui/x-data-grid';
+
 import { Link } from "react-router-dom";
 import { MdTrackChanges } from "react-icons/md";
 import { RxCross1 } from "react-icons/rx";
@@ -214,11 +214,11 @@ const AllOrders = () => {
       headerName: "Status",
       minWidth: 130,
       flex: 0.7,
-      cellClassName: (params) => {
-        return params.getValue(params.id, "status") === "Delivered"
-          ? "greenColor"
-          : "redColor";
-      },
+      // cellClassName: (params) => {
+      //   return params.getValue(params.id, "status") === "Delivered"
+      //     ? "greenColor"
+      //     : "redColor";
+      // },
     },
     {
       field: "itemsQty",
@@ -247,9 +247,9 @@ const AllOrders = () => {
         return (
           <>
             <Link to={`/user/order/${params.id}`}>
-              <Button>
+              <button>
                 <AiOutlineArrowRight size={20} />
-              </Button>
+                </button>
             </Link>
           </>
         );
@@ -261,6 +261,7 @@ const AllOrders = () => {
 
   orders &&
     orders.forEach((item) => {
+      console.log(item)
       row.push({
         id: item._id,
         itemsQty: item.cart.length,
@@ -274,7 +275,7 @@ const AllOrders = () => {
       <DataGrid
         rows={row}
         columns={columns}
-        pageSize={10}
+        pageSize={5}
         disableSelectionOnClick
         autoHeight
       />
@@ -303,9 +304,7 @@ const AllRefundOrders = () => {
       minWidth: 130,
       flex: 0.7,
       cellClassName: (params) => {
-        return params.getValue(params.id, "status") === "Delivered"
-          ? "greenColor"
-          : "redColor";
+        return params.status === "Delivered" ? "greenColor" : "redColor";
       },
     },
     {
@@ -335,9 +334,9 @@ const AllRefundOrders = () => {
         return (
           <>
             <Link to={`/user/order/${params.id}`}>
-              <Button>
+              <button>
                 <AiOutlineArrowRight size={20} />
-              </Button>
+              </button>
             </Link>
           </>
         );
@@ -387,11 +386,11 @@ const TrackOrder = () => {
       headerName: "Status",
       minWidth: 130,
       flex: 0.7,
-      cellClassName: (params) => {
-        return params.getValue(params.id, "status") === "Delivered"
-          ? "greenColor"
-          : "redColor";
-      },
+      // cellClassName: (params) => {
+      //   return params.getValue(params.id, "status") === "Delivered"
+      //     ? "greenColor"
+      //     : "redColor";
+      // },
     },
     {
       field: "itemsQty",
@@ -420,9 +419,9 @@ const TrackOrder = () => {
         return (
           <>
             <Link to={`/user/track/order/${params.id}`}>
-              <Button>
+              <button>
                 <MdTrackChanges size={20} />
-              </Button>
+              </button>
             </Link>
           </>
         );

@@ -3,8 +3,7 @@ import styles from "../../styles/styles";
 import { AiOutlineArrowRight, AiOutlineMoneyCollect } from "react-icons/ai";
 import { MdBorderClear } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { DataGrid } from "@material-ui/data-grid";
-import { Button } from "@material-ui/core";
+import { DataGrid } from '@mui/x-data-grid';
 import { useDispatch, useSelector } from "react-redux";
 import { getAllOrdersOfAdmin } from "../../redux/actions/order";
 import Loader from "../Layout/Loader";
@@ -34,11 +33,11 @@ const AdminDashboardMain = () => {
       headerName: "Status",
       minWidth: 130,
       flex: 0.7,
-      cellClassName: (params) => {
-        return params.getValue(params.id, "status") === "Delivered"
-          ? "greenColor"
-          : "redColor";
-      },
+      // cellClassName: (params) => {
+      //   return params.getValue(params.id, "status") === "Delivered"
+      //     ? "greenColor"
+      //     : "redColor";
+      // },
     },
     {
       field: "itemsQty",
